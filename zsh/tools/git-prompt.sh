@@ -15,7 +15,7 @@ function my_git_formatter() {
       local   modified='%006F'  # ~> yellow   fg
       local   untracked='%39F'  # ~> blue     fg
       local conflicted='%196F'  # ~> red      fg
-      local       grey='%008F'  # ~> grey     fg
+      local       grey='%243F'  # ~> grey     fg
       local      green='%028F'  # ~> green    fg
       local   gitcolor='%056F'  # ~> git      fg
     else
@@ -31,14 +31,13 @@ function my_git_formatter() {
     local        space=' '
     local         nums='0-1-2-3-4-5-6-7-8-9'
     local         subs='₀-₁-₂-₃-₄-₅-₆-₇-₈-₉'
-    local    divider_i="${grey}${end}"
-    local        git_i="${gitcolor}"
+    local    divider_i="${grey}⦚${end}"
+    local        git_i="${gitcolor}ﯙ"
     local     branch_i="${clean}$(echo '\uf418')"
     local     staged_i="ﰖ"
     local   unstaged_i=""
     local  untracked_i="﬒"
     local   conflict_i=""
-
     # ==> Vcs info
     local   res
     local where
@@ -48,9 +47,9 @@ function my_git_formatter() {
       branch_i="${clean}$(echo '\uf6a4')"
     fi
 
-    # >=> Add segments from PK9
+    ### ~~> >=> >=> Add segments from PK9 <=< <=< <~~ ###
     if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
-      res+="$git_i $divider $branch_i"
+      res+="$git_i $divider_i$branch_i"
       # =>  Branch
       where="$space${(V)VCS_STATUS_LOCAL_BRANCH}$space"
     elif [[ -n $VCS_STATUS_TAG ]]; then

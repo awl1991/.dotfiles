@@ -20,7 +20,7 @@ zsh_wifi_signal(){
           [[ $ssid ]] && icon='\uf424  '                                             # [ HOME WIFI ]
           [[ $channel = '6' || $channel = '1' ]] && icon='\uf838'                   # [ HOTSPOT ]
           [[ $bssid = 'c6:52:61:59:8b:33' ]] && icon=''
-          [[ $bssid = 'c6:52:61:59:8b:33' ]] && ssid='\uf968Home'
+          [[ $bssid = 'c6:52:61:59:8b:33' ]] && ssid='􀙇  Home'
           [[ $signal -gt -60 ]] && color='%F{2}' && tcolor='%F{2}'                   # [ WiFi FAST ]
           [[ $signal -lt -70 ]] && color='%F{10}' && tcolor='%F{059}'                # [ WiFi SLOW ]
 

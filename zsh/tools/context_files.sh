@@ -56,7 +56,7 @@ prompt_language() {
             [[ $file = 'sqlite' ]] && icon="${icon}  %F{80}\ue7c4%f"
             [[ $file = '.db' ]] && icon="${icon}  %F{230}\ue706%f"
             [[ $file = '.vimrc' ]] && vim="  %F{64}\ue62b%f"
-            [[ $file = '.tmux.conf' ]] && tmux="  %F{026}\uf0db%f"
+            [[ $file = '.tmux.conf' ]] && tmux=" %F{026} \uf0db%f"
             [[ $file = '.app' ]] && icon="  %F{004}\ue713%f"
             [[ $file = '.dylib' ]] && icon="  %F{014}\uf302%f"
             [[ $file = '.zshrc' ]] && zshrc="  %F{004}\uf489%f"
@@ -107,7 +107,7 @@ prompt_language() {
         else
             icon="$term"
         fi
-    echo $icon
+    echo "$icon"
 }
 
 
