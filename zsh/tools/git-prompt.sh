@@ -51,7 +51,7 @@ function my_git_formatter() {
     if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
       res+="$git_i $divider_i$branch_i"
       # =>  Branch
-      where="$space${(V)VCS_STATUS_LOCAL_BRANCH}$space"
+      where="$space${(V)VCS_STATUS_LOCAL_BRANCH}"
     elif [[ -n $VCS_STATUS_TAG ]]; then
       res+="${end}#"
       # =>    Tag
@@ -78,7 +78,7 @@ function my_git_formatter() {
     # -> Clear ahead/!behind
     (( VCS_STATUS_COMMITS_AHEAD && !VCS_STATUS_COMMITS_BEHIND )) && res+=" "
     # ->     Ahead of remote
-    (( VCS_STATUS_COMMITS_AHEAD  )) && res+="${clean}%F{028}${VCS_STATUS_COMMITS_AHEAD} ${end}"
+    (( VCS_STATUS_COMMITS_AHEAD  )) && res+="${clean}%F{02}${VCS_STATUS_COMMITS_AHEAD} ${end}"
     # ->   Number of Stashes
     (( VCS_STATUS_STASHES        )) && res+="${clean} ${VCS_STATUS_STASHES} ${end}"
     # ->       Unusual state
