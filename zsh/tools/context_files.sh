@@ -15,7 +15,7 @@ prompt_language() {
         '\.lhs' '\.MD' '\.mysql' '\.rbw' 'require.js' '\.rs'
         '\.txt' 'sqlite' '\.swift' '\.expo' 'dockerfile'
         'docker-compose.yml' '.gitignore' '\.db' '\.app'
-        '\.dylib'
+        '\.dylib' 'yarn.lock'
     )
     local pattern=$(echo ${args[@]} | tr " " "|")
 
@@ -23,17 +23,14 @@ prompt_language() {
         do
         if
             [[ $file = '.vscode' && $PWD != '/Users/awl' ]] && vscode="  %F{045}\ue70c%f"
-            [[ $file = 'node_modules' ]] && node="  %F{064}\uf898%f"
+            [[ $file = 'node_modules' ]] && node="  %F{064}\uf2b8%f"
             [[ $file = '.expo' && $PWD != '/Users/awl' ]] && react="  %F{074}\ufc06%f"
             [[ $file = '.gitignore' ]] && git="  %F{166}\uf113%f"
-            [[
-            $file = 'dockerfile' ||
-            $file = 'docker-compose.yml'
-            ]] && docker="  %F{039}\uf308%f"
+            [[ $file = 'dockerfile' || $file = 'docker-compose.yml' ]] && docker="  %F{039}\uf308%f"
             [[ $file = '.js' ]] && icon="${icon}  %F{142}\uf81d%f"
             [[ $file = 'require.js' ]] && icon="${icon}  %F{184}\ue770%f"
             [[ $file = '.json' ]] && icon="${icon}  %F{244}\ufb25%f"
-            [[ $file = 'package.json' ]] && npm="  %F{124}\ue71e%f"
+            [[ $file = 'package.json' || 'yarn.lock' ]] && npm="  %F{112}\uf898%f"
             [[ $file = '.php' ]] && icon="${icon}  %F{061}\uf81e%f"
             [[ $file = '.css' ]] && icon="${icon}  %F{026}\ue749%f"
             [[ $file = '.scss' ]] && icon="${icon}  %F{133}\ue74b%f"
@@ -55,11 +52,11 @@ prompt_language() {
             [[ $file = '.txt' ]] && icon="${icon}  %F{007}\uf89d%f"
             [[ $file = 'sqlite' ]] && icon="${icon}  %F{80}\ue7c4%f"
             [[ $file = '.db' ]] && icon="${icon}  %F{230}\ue706%f"
-            [[ $file = '.vimrc' ]] && vim="  %F{64}\ue62b%f"
-            [[ $file = '.tmux.conf' ]] && tmux=" %F{026} \uf0db%f"
+            [[ $file = '.vimrc' ]] && vim="  %F{64}\ue7c5%f"
+            [[ $file = '.tmux.conf' ]] && tmux="%F{026}  ⓣ%f"
             [[ $file = '.app' ]] && icon="  %F{004}\ue713%f"
             [[ $file = '.dylib' ]] && icon="  %F{014}\uf302%f"
-            [[ $file = '.zshrc' ]] && zshrc="  %F{004}\uf489%f"
+            [[ $file = '.zshrc' ]] && zshrc="  %F{004}ⓩ%f"
         done
 
         if [ $PWD = '/bin' ]; then
