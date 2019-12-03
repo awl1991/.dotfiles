@@ -1,11 +1,4 @@
-# --> Exports <-- #
-export PATH="/usr/local/share/npm/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="$(yarn global bin):$PATH"
-
-# # ==> ==> ==> ZSH Theme <== <== <== #
+# ==> ==> ==> ZSH Theme <== <== <== #
 ZSH_THEME=powerlevel10k/powerlevel10k
 
 # ==> ==> Font Pack <== <
@@ -135,7 +128,7 @@ POWERLEVEL9K_OS_ICON_BACKGROUND='000'
 POWERLEVEL9K_CUSTOM_MIDDLE_BACKGROUND="000"
 POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='240'
 POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='236'
-POWERLEVEL9K_VCS_BACKGROUND='016'
+POWERLEVEL9K_VCS_BACKGROUND="016"
 
 # --> Left Newline Icons
 POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="%F{000}~"
@@ -260,7 +253,6 @@ alias       ccap="code /Users/awl/Desktop/Capital\ Consultants/capital-consultan
 alias    codecap="code /Users/awl/Desktop/Capital\ Consultants/capital-consultants"
 local     cap_id='{ "site_id": "181d8830-fd2f-445e-bec0-5624a39e3ce7"}'
 alias 	 capdata="netlify api getSite --data '$cap_id' | jq '.'"
-# alias capstatus="netlify api getSite --data '$capital_consultants_id' | jq '.[].?'"
 
 # --> P10K
 source $ZSH_CUSTOM/themes/powerlevel10k/powerlevel10k.zsh-theme
