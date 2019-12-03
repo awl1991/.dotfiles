@@ -47,7 +47,7 @@ function my_git_formatter() {
       branch_i="${clean}$(echo '\uf6a4')"
     fi
 
-    ### ~~> >=> >=> Add segments from PK9 <=< <=< <~~ ###
+    # ~~> >=> Add segments from PK9 <=< <~~ #
     if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
       res+="$git_i $divider_i$branch_i"
       # =>  Branch
