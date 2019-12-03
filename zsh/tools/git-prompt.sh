@@ -74,7 +74,7 @@ function my_git_formatter() {
     fi
 
     # ->        Behind remote
-    (( VCS_STATUS_COMMITS_BEHIND )) && res+=" ${clean}%F{009}${VCS_STATUS_COMMITS_BEHIND} ${end}"
+    (( VCS_STATUS_COMMITS_BEHIND )) && res+="${clean}%F{009}${VCS_STATUS_COMMITS_BEHIND} ${end}"
     # -> Clear ahead/!behind
     (( VCS_STATUS_COMMITS_AHEAD && !VCS_STATUS_COMMITS_BEHIND )) && res+=" "
     # ->     Ahead of remote
