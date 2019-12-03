@@ -74,23 +74,23 @@ function my_git_formatter() {
     fi
 
     # ->        Behind remote
-    (( VCS_STATUS_COMMITS_BEHIND )) && res+="${clean}%F{009}${VCS_STATUS_COMMITS_BEHIND} ${end}"
+    (( VCS_STATUS_COMMITS_BEHIND )) && res+="${space}${clean}%F{009}${VCS_STATUS_COMMITS_BEHIND} ${end}"
     # -> Clear ahead/!behind
     (( VCS_STATUS_COMMITS_AHEAD && !VCS_STATUS_COMMITS_BEHIND )) && res+=" "
     # ->     Ahead of remote
     (( VCS_STATUS_COMMITS_AHEAD  )) && res+="${clean}%F{02}${VCS_STATUS_COMMITS_AHEAD} ${end}"
     # ->   Number of Stashes
-    (( VCS_STATUS_STASHES        )) && res+="${clean} ${VCS_STATUS_STASHES} ${end}"
+    (( VCS_STATUS_STASHES        )) && res+="${space}${clean} ${VCS_STATUS_STASHES} ${end}"
     # ->       Unusual state
-    [[ -n $VCS_STATUS_ACTION     ]] && res+="${conflicted} ${VCS_STATUS_ACTION} ${end}"
+    [[ -n $VCS_STATUS_ACTION     ]] && res+="${space}${conflicted} ${VCS_STATUS_ACTION} ${end}"
     # ->     Merge conflicts
-    (( VCS_STATUS_NUM_CONFLICTED )) && res+="${conflicted}${conflict_i}$(echo ${VCS_STATUS_NUM_CONFLICTED} | tr $nums $subs) ${end}"
+    (( VCS_STATUS_NUM_CONFLICTED )) && res+="${space}${conflicted}${conflict_i}$(echo ${VCS_STATUS_NUM_CONFLICTED} | tr $nums $subs) ${end}"
     # ->      Staged commits
-    (( VCS_STATUS_NUM_STAGED     )) && res+="${green}${staged_i}$(echo ${VCS_STATUS_NUM_STAGED} | tr $nums $subs) ${end}"
+    (( VCS_STATUS_NUM_STAGED     )) && res+="${space}${green}${staged_i}$(echo ${VCS_STATUS_NUM_STAGED} | tr $nums $subs) ${end}"
     # ->    Unstaged commits
-    (( VCS_STATUS_NUM_UNSTAGED   )) && res+="${modified}${unstaged_i}$(echo ${VCS_STATUS_NUM_UNSTAGED} | tr $nums $subs) ${end}"
+    (( VCS_STATUS_NUM_UNSTAGED   )) && res+="${space}${modified}${unstaged_i}$(echo ${VCS_STATUS_NUM_UNSTAGED} | tr $nums $subs) ${end}"
     # ->     Untracked files
-    (( VCS_STATUS_NUM_UNTRACKED  )) && res+="${untracked}${untracked_i}$(echo ${VCS_STATUS_NUM_UNTRACKED} | tr $nums $subs) ${end}"
+    (( VCS_STATUS_NUM_UNTRACKED  )) && res+="${space}${untracked}${untracked_i}$(echo ${VCS_STATUS_NUM_UNTRACKED} | tr $nums $subs) ${end}"
 
     typeset -g my_git_format=$res
   }
