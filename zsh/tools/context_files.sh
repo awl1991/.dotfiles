@@ -30,7 +30,7 @@ prompt_language() {
             [[ $file = '.js' ]]                                        && icon="${icon}  %F{142}\uf81d%f"
             [[ $file = 'require.js' ]]                                 && icon="${icon}  %F{184}\ue770%f"
             [[ $file = '.json' ]]                                      && icon="${icon}  %F{244}\ufb25%f"
-            [[ $file = 'package.json' || 'yarn.lock' ]]                && npm="  %F{112}\uf898%f"
+            [[ $file = 'package.json' || $file = 'yarn.lock' ]]                && npm="  %F{112}\uf898%f"
             [[ $file = '.php' ]]                                       && icon="${icon}  %F{061}\uf81e%f"
             [[ $file = '.css' ]]                                       && icon="${icon}  %F{026}\ue749%f"
             [[ $file = '.scss' ]]                                      && icon="${icon}  %F{133}\ue74b%f"
