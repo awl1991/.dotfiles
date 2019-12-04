@@ -1,6 +1,7 @@
 #!/usr/bin/zsh
 # ===> Display the terminal 256 colors by blocks <=== #
 showcolors (){
+	# init grid
 	typeset -A grid
 
 	# number of lines per block
@@ -13,9 +14,18 @@ showcolors (){
 	local b=0
 	local arr
 	local bline
+	local first=0
 
-	print -P "%F{14}\t\t\t 􀎒  Terminal 256 Color Palette%f"
+	# title
+	print -P 					 "\t\t %F{23}    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+	print -P "\t\t %F{23}┏━━━┫   %F{061}􀎒   %F{025}Terminal 256 Color Palette%F{23}   ┣━━━┓"
+	print -P 					 "\t\t %F{23}┃   ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛   ┃"
 	for color in {16..255}; do
+		# top edge connect to title
+		Ttbox3="╭──────────────╀"
+		Ttbox2="┬──────────────┬"
+		Ttbox4="──────────────"
+		Ttbox1="╀──────────────╮"
 		# top edges
 		tbox3="╭──────────────"
 		tbox2="┬──────────────"
@@ -59,15 +69,30 @@ showcolors (){
 		# count how many blocks are filled
 		[[ $m = 5 ]] && b="$(($b+1))" && z=''
 
-		# display blocks if there are 5 in the current row
+		# display group if 5x6
 		if [[ $b = $blocks ]]; then
+			# current group 1-8
+			first=$(( first+1 ))
 			local cr=''
-			# top border for each group of blocks
+			# top border
 			for (( i=${#arr[@]}-1 ; i>0 ; i-- )) ; do
-				local edge="$tbox2"
-				[[ $i = "1" ]] && edge=$tbox1
-				[[ $i = "3" ]] && edge=$tbox2
-				[[ $i = "5" ]] && edge=$tbox3
+				edge=""
+				# top border for first group
+				if [ $first = 1 ]; then
+					edge="$Ttbox2"
+					[[ $i = "1" ]] && edge=$Ttbox1
+					[[ $i = "2" ]] && edge=$Ttbox4
+					[[ $i = "4" ]] && edge=$Ttbox4
+					[[ $i = "3" ]] && edge=$Ttbox2
+					[[ $i = "5" ]] && edge=$Ttbox3
+				# top border for remaining groups
+				elif  [ $(($first > 6)) ]; then
+					edge="$tbox2"
+					[[ $i = "1" ]] && edge="$tbox1"
+					[[ $i = "3" ]] && edge="$tbox2"
+					[[ $i = "5" ]] && edge="$tbox3"
+				fi
+				# display top border
 				cr="${cr}%F{$arr[$i]}${edge}%f"
 			done
 			print -P "  $cr"
@@ -83,7 +108,7 @@ showcolors (){
 		line=''
 	done
 
-	echo "\t\t\t\t       􀍠"
+	print -P "\t\t\t\t       %F{23}􀍠"
 
 	# Remaining colors are displayed separately
 	# because they don't blend well with the others
