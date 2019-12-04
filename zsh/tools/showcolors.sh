@@ -9,17 +9,19 @@ showcolors (){
 
 	# number of blocks per terminal line
 	local blocks=5
-	local line=''
-	local m=0
-	local b=0
-	local arr
-	local bline
-	local first=0
 
-	# title
+	# grid references
+	local m=0 b=0
+
+	# border variables
+	local first=0 line='' arr bline
+
+	# title display
 	print -P 					 "\t\t %F{23}    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
 	print -P "\t\t %F{23}┏━━━┫   %F{061}􀎒   %F{025}Terminal 256 Color Palette%F{23}   ┣━━━┓"
 	print -P 					 "\t\t %F{23}┃   ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛   ┃"
+
+	# loop through colors
 	for color in {16..255}; do
 		# top edge connect to title
 		Ttbox3="╭──────────────╀"
@@ -92,13 +94,13 @@ showcolors (){
 					[[ $i = "3" ]] && edge="$tbox2"
 					[[ $i = "5" ]] && edge="$tbox3"
 				fi
-				# display top border
 				cr="${cr}%F{$arr[$i]}${edge}%f"
 			done
+			# display top border
 			print -P "  $cr"
 			b=0;
 			arr=''
-			# Display each line
+			# display each line
 			for j in {0..$m}; do
 				print -P "%F{$color} $grid[$j]"
 				grid[$j]=""
@@ -108,10 +110,10 @@ showcolors (){
 		line=''
 	done
 
+	# print divider before displaying remaining colors
 	print -P "\t\t\t\t       %F{23}􀍠"
 
-	# Remaining colors are displayed separately
-	# because they don't blend well with the others
+	# remaining colors don't blend with the others - displayed separately
 	typeset -A rgrid
 	local rlines=3
 	local bblocks=5
