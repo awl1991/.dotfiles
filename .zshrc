@@ -103,7 +103,7 @@ POWERLEVEL9K_DIR_SHOW_WRITABLE="true"
 POWERLEVEL9K_DIR_LOCK_ICON="\uf023"
 
 # --> User icon
-POWERLEVEL9K_USER_ICON=' 􀉪 '
+POWERLEVEL9K_USER_ICON=" \ue378 "
 
 # --> User context
 POWERLEVEL9K_ROOT_ICON='\uF198'
@@ -115,7 +115,7 @@ POWERLEVEL9K_WHITESPACE_BETWEEN_RIGHT_SEGMENTS=''
 
 # --> Left Icons
 POWERLEVEL9K_APPLE_ICON='\uf179'
-POWERLEVEL9K_CUSTOM_MIDDLE='printf " \uf007"'
+POWERLEVEL9K_CUSTOM_MIDDLE='printf "\ue378 "'
 POWERLEVEL9K_CONTEXT_TEMPLATE="\uf823"
 
 # --> Left Foregrounds
@@ -132,7 +132,8 @@ POWERLEVEL9K_VCS_BACKGROUND="016"
 
 # --> Left Newline Icons
 POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="%F{000}~"
-POWERLEVEL9K_HOME_ICON="%K{23}\uf015 %F{23}\uE0B0%f"
+local home_i="\uE3AC" #
+POWERLEVEL9K_HOME_ICON="%K{23}$home_i %F{23}\uE0B0%f"
 POWERLEVEL9K_HOME_SUB_ICON='%F{023}􀈖 %f'
 POWERLEVEL9K_FOLDER_ICON=' 􀈖 '
 POWERLEVEL9K_ETC_ICON=' 􀍟 '
@@ -171,7 +172,9 @@ POWERLEVEL9K_TIME_FOREGROUND='109'
 # --> Prompt Prefixes
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{015}\u256D\U2500"
 POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX="%F{015}\u251C\u2500"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{015}\u2570\U2500\uF93F"
+bold="$(print '\ue3af ')"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{015}\u2570${bold}"
+# \uF93F\U2500%F{255}${bold}\033[1;37m
 
 # --> Add Newline Config
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
@@ -253,6 +256,11 @@ alias       ccap="code /Users/awl/Desktop/Capital\ Consultants/capital-consultan
 alias    codecap="code /Users/awl/Desktop/Capital\ Consultants/capital-consultants"
 local     cap_id='{ "site_id": "181d8830-fd2f-445e-bec0-5624a39e3ce7"}'
 alias 	 capdata="netlify api getSite --data '$cap_id' | jq '.'"
+local font
+forge_font() {
+	$(echo fontforge -script '/Users/awl/nerd-fonts/font-patcher' -c $1 -out './fonts')
+
+}
 
 # --> P10K
 source $ZSH_CUSTOM/themes/powerlevel10k/powerlevel10k.zsh-theme
