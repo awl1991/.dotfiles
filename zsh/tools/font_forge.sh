@@ -2,8 +2,10 @@ local fira='/Users/awl/nerd-fonts/src/unpatched-fonts/FiraCode/Retina/FiraCode-R
 local dotfont='/Users/awl/.dotfiles/fonts/'
 
 forge_font() {
+	$(rmfontfile)
 	$(echo fontforge -script '/Users/awl/nerd-fonts/font-patcher' -c $fira -out $dotfont)
 	$(echo open $dotfont)
+	$(rm '/Library/Fonts/Fira Code Retina Nerd Font Complete.ttf')
 }
 
 move_icons() {
@@ -18,19 +20,19 @@ move_icons() {
 		then print -P "%F{01}  %F{14}No New Font in Directory %F{01}"
 	else
 		print -P $(rm "$oldfont")
-		print -P '%F{07} 1. --> %F{14}...Removed old Icon Font %F{07}﯊ %F{10}'
+		print -P '%F{244} 1. --> %F{14}...Removed old Icon Font %F{244}﯊ %F{10}'
 		print -P $(mv "$newfont" "$glyphdir")
-		print -P '%F{07} 2. --> %F{14}...Moved Icon Font to Source %F{07} %F{10}'
+		print -P '%F{244} 2. --> %F{14}...Moved Icon Font to Source %F{244} %F{10}'
 		print -P $(mv $rename $oldfont)
-		print -P '%F{07} 3. --> %F{14}...Renamed New Font %F{07} %F{10}'
+		print -P '%F{244} 3. --> %F{14}...Renamed New Font %F{244} %F{10}'
 		print -P $(rm $macfont)
-		print -P '%F{07} 4. --> %F{14}...Removed generated Mac Font %F{07}﯊ %F{10}'
+		print -P '%F{244} 4. --> %F{14}...Removed generated Mac Font %F{244}﯊ %F{10}'
 	fi
 
 	if [ ! -f $htmlfile ]
-		then print -P '\n\n%F{07}-- >=> %F{14}Done %F{034}\n'
+		then print -P '\n\n %F{244} -- >=> %F{14}Done %F{034}\n'
 	else
 		print -P $(rm $htmlfile)
-		print -P '%F{07}5. --> %F{14}...Removed generated html file %F{07} %F{10}\n\n%F{07}-- >=> %F{14}Done %F{034}\n'
+		print -P '%F{244} 5. --> %F{14}...Removed generated html file %F{244} %F{10}\n\n %F{244}-- >=> %F{14}Done %F{034}\n'
 	fi
 }

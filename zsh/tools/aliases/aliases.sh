@@ -1,4 +1,5 @@
 # @@@@@ -->{ ZSH ALIASES }<-- @@@@@ #
+HOME='Users/awl'
 alias 	  update="source ${Home}/.zshrc"
 alias    tmuxsrc="tmux source-file ${Home}/.tmux/.tmux.conf"
 alias 	tmuxkill='tmux kill-server'
@@ -24,5 +25,5 @@ alias       ccap="code ${Home}/Desktop/Capital\ Consultants/capital-consultants"
 alias    codecap="code ${Home}/Desktop/Capital\ Consultants/capital-consultants"
 local     cap_id='{ "site_id": "181d8830-fd2f-445e-bec0-5624a39e3ce7"}'
 alias 	 capdata="netlify api getSite --data '$cap_id' | jq '.'"
-alias rmfontfile="rm -rf ./fonts/*"
+alias rmfontfile="rm -rf $HOME/.dotfiles/fonts/*"
 alias rebuildfinder="sudo mdutil -i on /"
