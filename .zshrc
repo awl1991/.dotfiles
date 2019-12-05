@@ -29,6 +29,7 @@ ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 MY_ZSH="$HOME/.dotfiles/zsh"
 MY_ZSH_TOOLS="$MY_ZSH/tools"
+ALIASES="$MY_ZSH_TOOLS/aliases"
 
 # --> Completions path
 fpath=($HOME/zsh-completions/src $fpath)
@@ -100,13 +101,13 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
 # --> Show lock if directory is !writable
 POWERLEVEL9K_DIR_SHOW_WRITABLE="true"
-POWERLEVEL9K_DIR_LOCK_ICON="\uf023"
+POWERLEVEL9K_DIR_LOCK_ICON=""
 
 # --> User icon
-POWERLEVEL9K_USER_ICON=" \ue378 "
+POWERLEVEL9K_USER_ICON="  "
 
 # --> User context
-POWERLEVEL9K_ROOT_ICON='\uF198'
+POWERLEVEL9K_ROOT_ICON=''
 POWERLEVEL9K_USER_ROOT_BACKGROUND="52"
 
 # --> Remove Left Segment Default Whitespace
@@ -114,8 +115,8 @@ POWERLEVEL9K_WHITESPACE_BETWEEN_LEFT_SEGMENTS=' '
 POWERLEVEL9K_WHITESPACE_BETWEEN_RIGHT_SEGMENTS=''
 
 # --> Left Icons
-POWERLEVEL9K_APPLE_ICON='\uf179'
-POWERLEVEL9K_CUSTOM_MIDDLE='printf "\ue378 "'
+POWERLEVEL9K_APPLE_ICON=''
+POWERLEVEL9K_CUSTOM_MIDDLE='printf " "'
 POWERLEVEL9K_CONTEXT_TEMPLATE="\uf823"
 
 # --> Left Foregrounds
@@ -132,29 +133,29 @@ POWERLEVEL9K_VCS_BACKGROUND="016"
 
 # --> Left Newline Icons
 POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="%F{000}~"
-local home_i="\uE3AC" #
-POWERLEVEL9K_HOME_ICON="%K{23}$home_i %F{23}\uE0B0%f"
+local home_i="\ue3ac" #
+POWERLEVEL9K_HOME_ICON="%K{23}$home_i %F{23}%f"
 POWERLEVEL9K_HOME_SUB_ICON='%F{023}􀈖 %f'
 POWERLEVEL9K_FOLDER_ICON=' 􀈖 '
 POWERLEVEL9K_ETC_ICON=' 􀍟 '
-POWERLEVEL9K_DIR_PATH_SEPARATOR="\ue216"
+POWERLEVEL9K_DIR_PATH_SEPARATOR=""
 
 # --> Left Newline Backgrounds
 POWERLEVEL9K_DIR_HOME_BACKGROUND='23'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='30'
 
 # Left Newline Foregrounds
-POWERLEVEL9K_DIR_HOME_FOREGROUND='6'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='0'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='22'
 
 # --> Right Prompt Icons
-POWERLEVEL9K_STATUS_OK_ICON=" \uf444 "
-POWERLEVEL9K_STATUS_FAIL_ICON=" \uf444 "
+POWERLEVEL9K_STATUS_OK_ICON="  "
+POWERLEVEL9K_STATUS_FAIL_ICON="  "
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
 POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
 POWERLEVEL9K_CUSTOM_BATTERY_STATUS="prompt_zsh_battery_level"
-POWERLEVEL9K_TIME_FORMAT=" \ue384 $time_format$p "
+POWERLEVEL9K_TIME_FORMAT="  $time_format$p "
 POWERLEVEL9K_TIME_ICON=''
 
 # --> Right Prompt Backgrounds
@@ -170,11 +171,10 @@ POWERLEVEL9K_STATUS_FAIL_FOREGROUND="001"
 POWERLEVEL9K_TIME_FOREGROUND='109'
 
 # --> Prompt Prefixes
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{015}\u256D\U2500"
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{015}╭─"
 POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX="%F{015}\u251C\u2500"
-bold="$(print '\ue3af ')"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{015}\u2570${bold}"
-# \uF93F\U2500%F{255}${bold}\033[1;37m
+# POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX="%F{015\u251c──"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{015}╰ "
 
 # --> Add Newline Config
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
@@ -183,12 +183,12 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 
 # -->  Segment Separators
 
-POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\uE0B0'
+POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
 
 # --> Subsegment Separators
 POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=''
-POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='%F{250}\ue621%f'
+POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='%F{250}%f'
 
 # --> Zsh Auto Suggestions Color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23,bg=grey"
@@ -204,6 +204,8 @@ POWERLEVEL9K_CUSTOM_PROMPT_SPACE='prompt_space'
 POWERLEVEL9K_CUSTOM_PROMPT_SPACE_BACKGROUND=''
 POWERLEVEL9K_CUSTOM_PROMPT_SPACE_FOREGROUND='white'
 
+
+
 # ----------------------------------------------- #
 #        ==> ==> FUNCTION SEGMENTS <== <==        #
 # ----------------------------------------------- #
@@ -216,6 +218,7 @@ source $MY_ZSH_TOOLS/battery.sh
 source $MY_ZSH_TOOLS/disk_space.sh
 # --> Display icons based on directory context
 source $MY_ZSH_TOOLS/context_files.sh
+
 # ----------------------------------------------- #
 #         ==> ==> USEFUL COMMANDS <== <==         #
 # ----------------------------------------------- #
@@ -227,41 +230,17 @@ source $MY_ZSH_TOOLS/newline.sh
 source $MY_ZSH_TOOLS/colorls_shortcuts.sh
 # --> Show color palette
 source $MY_ZSH_TOOLS/showcolors.sh
+# --> Create custom glyph palette
+source $MY_ZSH_TOOLS/font_forge.sh
 
-#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
-#@@@@@@@@@@@@@@@@@@@@@@@-->{ ZSH ALIASES }<--@@@@@@@@@@@@@@@@@@@@@@#
-#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
-alias 	  update="source ~/.zshrc"
-alias    tmuxsrc='tmux source-file ~/.tmux/.tmux.conf'
-alias 	tmuxkill='tmux kill-server'
-alias 	tmuxlist='tmux list-sessions'
-alias vuninstall='vim +PluginInstall +qall'
-alias 		 omz="code ~/.zshrc"
-alias 		imgc="imgcat"
-alias 	   svpng="qlmanage -t -s 1000 -o ."
-alias 		tree='colorls --tree'
-alias  yarnclean="rm -rf node_modules/ && yarn install"
-alias 	npmclean="rm -rf node_modules/ && npm install"
-alias 	 myipmap="curl http://ipinfo.io/ip | iponmap"
-alias 	    code="code-insiders"
-alias 	 codenew="code-insiders --new-window"
-alias 		 gitc="git clone"
-alias 		gits="git status"
-alias 	  gitall="git add -A; git commit -m 'commit all'; git push -u origin master"
-alias 		rcvp="cd ~/desktop/rcvpro"
-alias 	 tunnel8="./ngrok http 8000"
-alias 	 tunnel3="./ngrok http 3000"
-alias        cap="cd /Users/awl/Desktop/Capital\ Consultants/capital-consultants"
-alias       ccap="code /Users/awl/Desktop/Capital\ Consultants/capital-consultants"
-alias    codecap="code /Users/awl/Desktop/Capital\ Consultants/capital-consultants"
-local     cap_id='{ "site_id": "181d8830-fd2f-445e-bec0-5624a39e3ce7"}'
-alias 	 capdata="netlify api getSite --data '$cap_id' | jq '.'"
-local font
-forge_font() {
-	$(echo fontforge -script '/Users/awl/nerd-fonts/font-patcher' -c $1 -out './fonts')
+# -----------------------------------------#
+#         ==> ==> ALIASES <== <==          #
+# ---------------------------------------- #
+source $ALIASES/aliases.sh
 
-}
-
+# -----------------------------------------#
+#  ==> ==> NEEDED AT END OF FILE <== <==   #
+# ---------------------------------------- #
 # --> P10K
 source $ZSH_CUSTOM/themes/powerlevel10k/powerlevel10k.zsh-theme
 # --> Oh My Zsh
@@ -272,7 +251,6 @@ source ~/.iterm2_shell_integration.zsh
 source $ZSH_CUSTOM/plugins/zsh-async/async.zsh
 # --> z
 . $ZSH/plugins/z/z.sh
-
 # --> Zsh-syntax-highlighting config
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 # ==> MUST BE FINAL SOURCE -- Zsh-syntax-highlighting <== #
