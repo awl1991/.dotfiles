@@ -1,5 +1,4 @@
 # @@@@@ -->{ ZSH ALIASES }<-- @@@@@ #
-HOME='Users/awl'
 alias 	  update="source ${Home}/.zshrc"
 alias    tmuxsrc="tmux source-file ${Home}/.tmux/.tmux.conf"
 alias 	tmuxkill='tmux kill-server'
