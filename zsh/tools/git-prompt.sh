@@ -48,6 +48,7 @@ function my_git_formatter() {
       branch_i="${clean}$(echo '')"
     fi
 
+    [[ ${VCS_STATUS_COMMITS_AHEAD} > 0 ]] && space=''
     # ~~> >=> Add segments from PK9 <=< <~~ #
     if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
       res+="$git_i $divider_i$branch_i"
