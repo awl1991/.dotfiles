@@ -52,7 +52,7 @@ function my_git_formatter() {
     if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
       res+="$git_i $divider_i$branch_i"
       # =>  Branch
-      where="$space${(V)VCS_STATUS_LOCAL_BRANCH}"
+      where="$space${(V)VCS_STATUS_LOCAL_BRANCH}${space}"
     elif [[ -n $VCS_STATUS_TAG ]]; then
       res+="${end}#"
       # =>    Tag
@@ -89,7 +89,7 @@ function my_git_formatter() {
     # ->      Staged commits
     (( VCS_STATUS_NUM_STAGED     )) && res+="${space}${green}${staged_i}$(echo ${VCS_STATUS_NUM_STAGED} | tr $nums $subs)${end}"
     # ->    Unstaged commits
-    (( VCS_STATUS_NUM_UNSTAGED   )) && res+="${space}${modified}${unstaged_i}$(echo ${VCS_STATUS_NUM_UNSTAGED} | tr $nums $subs)${end}"
+    (( VCS_STATUS_NUM_UNSTAGED   )) && res+="${modified}${unstaged_i}$(echo ${VCS_STATUS_NUM_UNSTAGED} | tr $nums $subs)${end}"
     # ->     Untracked files
     (( VCS_STATUS_NUM_UNTRACKED  )) && res+="${untracked}${untracked_i}$(echo ${VCS_STATUS_NUM_UNTRACKED} | tr $nums $subs)${end}"
 
