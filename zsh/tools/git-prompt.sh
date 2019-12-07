@@ -90,7 +90,7 @@ function my_git_formatter() {
     # ->     Merge conflicts
     (( VCS_STATUS_NUM_CONFLICTED )) && res+="${space}${conflicted}${conflict_i}$(echo ${VCS_STATUS_NUM_CONFLICTED} | tr $nums $subs)${end}"
     # ->      Staged commits
-    (( VCS_STATUS_NUM_STAGED     )) && res+="${green}${staged_i}$(echo ${VCS_STATUS_NUM_STAGED} | tr $nums $subs)${end} "
+    (( VCS_STATUS_NUM_STAGED     )) && res+="${green}${staged_i}$(echo ${VCS_STATUS_NUM_STAGED} | tr $nums $subs)${end}${space}"
     # ->    Unstaged commits
     (( VCS_STATUS_NUM_UNSTAGED   )) && res+="${modified}${unstaged_i}$(echo ${VCS_STATUS_NUM_UNSTAGED} | tr $nums $subs)${end}"
     # ->     Untracked files
