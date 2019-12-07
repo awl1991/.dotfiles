@@ -30,6 +30,7 @@ function my_git_formatter() {
 
     # ==> Custom additions
     local        space=' '
+    local        dynspace=' '
     local         nums='0-1-2-3-4-5-6-7-8-9'
     local         subs='₀-₁-₂-₃-₄-₅-₆-₇-₈-₉'
     local    divider_i="${grey}⦚${end}"
@@ -48,12 +49,13 @@ function my_git_formatter() {
       branch_i="${clean}$(echo '')"
     fi
 
-    [[ ${VCS_STATUS_COMMITS_AHEAD} > 0 ]] && space=''
+    [[ ${VCS_STATUS_COMMITS_AHEAD} > 0 ]] && dynspace=''
+
     # ~~> >=> Add segments from PK9 <=< <~~ #
     if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
       res+="$git_i $divider_i$branch_i"
       # =>  Branch
-      where="$space${(V)VCS_STATUS_LOCAL_BRANCH}${space}"
+      where="$space${(V)VCS_STATUS_LOCAL_BRANCH}${dynspace}"
     elif [[ -n $VCS_STATUS_TAG ]]; then
       res+="${end}#"
       # =>    Tag
@@ -88,7 +90,7 @@ function my_git_formatter() {
     # ->     Merge conflicts
     (( VCS_STATUS_NUM_CONFLICTED )) && res+="${space}${conflicted}${conflict_i}$(echo ${VCS_STATUS_NUM_CONFLICTED} | tr $nums $subs)${end}"
     # ->      Staged commits
-    (( VCS_STATUS_NUM_STAGED     )) && res+="${space}${green}${staged_i}$(echo ${VCS_STATUS_NUM_STAGED} | tr $nums $subs)${end}"
+    (( VCS_STATUS_NUM_STAGED     )) && res+="${green}${staged_i}$(echo ${VCS_STATUS_NUM_STAGED} | tr $nums $subs)${end} "
     # ->    Unstaged commits
     (( VCS_STATUS_NUM_UNSTAGED   )) && res+="${modified}${unstaged_i}$(echo ${VCS_STATUS_NUM_UNSTAGED} | tr $nums $subs)${end}"
     # ->     Untracked files
