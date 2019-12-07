@@ -1,0 +1,236 @@
+{
+    // *!== --> Window Title <-- !==*
+        "window.title": "~/${rootName} ￫ ${activeEditorShort}  ",
+        "window.zoomLevel": 0,
+
+    // --> Customize UI Plugin
+        "customizeUI.font.regular": "Helvetica Nueve",
+        "customizeUI.font.monospace": "FiraCode Nerd Font",
+        "customizeUI.titleBar": "inline",
+
+    // --> VSCode Editor <--
+        "editor.fontFamily": "FiraCode Nerd Font",
+        "editor.fontLigatures": true,
+        "editor.fontSize": 13, // Medium
+        "editor.formatOnPaste": true,
+        "editor.autoClosingBrackets": "beforeWhitespace",
+        "editor.autoClosingQuotes": "beforeWhitespace",
+        "editor.matchBrackets": false,
+        "editor.suggest.maxVisibleSuggestions": 5,
+        "editor.insertSpaces": false,
+        "editor.minimap.enabled": false,
+        "editor.tokenColorCustomizations": {},
+        "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\\\|;:'\\\",.<>/? •",
+        "editor.multiCursorModifier": "ctrlCmd",
+        "editor.renderControlCharacters": true,
+        "editor.formatOnSaveTimeout": 1.2,
+        "editor.wordWrapColumn": 100,
+        "editor.wrappingIndent": "indent",
+        "editor.scrollBeyondLastColumn": 0,
+        "editor.quickSuggestionsDelay": 1500,
+
+    // --> File Defaults <--
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+
+    // --> Misc. VSCode Configs <--
+        "workbench.colorTheme": "One Dark Pro",
+        "search.location": "panel",
+        "cSpell.language": "en-US",
+        "breadcrumbs.enabled": true,
+        "search.useIgnoreFiles": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "zenMode.hideLineNumbers": false,
+        "explorer.openEditors.visible": 5,
+        "workbench.editor.labelFormat": "medium",
+        "workbench.editor.restoreViewState": false,
+        "workbench.editor.tabSizing": "shrink",
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.enablePreviewFromQuickOpen": false,
+        "workbench.activityBar.visible": true,
+        "workbench.iconTheme": "material-icon-theme",
+        "workbench.statusBar.visible": true,
+        "workbench.startupEditor": "newUntitledFile",
+
+    // --> Bracket Colorizer 2 <--
+        "bracket-pair-colorizer-2.showBracketsInGutter": true,
+        "bracket-pair-colorizer-2.rulerPosition": "Full",
+        "bracket-pair-colorizer-2.colorMode": "Independent",
+        "bracket-pair-colorizer-2.showBracketsInRuler": true,
+        "bracket-pair-colorizer-2.highlightActiveScope": true,
+
+    // --> Path Intellisense <--
+        "path-intellisense.extensionOnImport": true,
+
+    // --> Insert Unicode <--
+        "insert-unicode.show-identified-characters-in-file": true,
+        "insert-unicode.unicode-font-use-regular-space": true,
+
+    // --> Color Highlight <--
+        "color-highlight.markRuler": false,
+
+    // --> Live Server <--
+        "liveServer.settings.donotShowInfoMsg": true,
+        "liveServer.settings.donotVerifyTags": true,
+
+    // --> Github <--
+        "git.autoRepositoryDetection": false,
+
+    // ~~> [ Saved Defaults ] <~~
+        "javascript.updateImportsOnFileMove.enabled": "always",
+        "explorer.confirmDragAndDrop": false,
+        "cSpell.userWords": [
+            "animatable",
+            "home",
+            "init",
+            "keywords",
+            "mobx",
+            "multiline",
+            "native",
+            "nunito",
+            "powerlevel",
+            "rcvpro",
+            "react",
+            "rprompt",
+            "sans",
+            "subfolder",
+            "todohighlight",
+            "vals",
+            "wifi"
+        ],
+        "files.eol": "\n",
+        "[markdown]": {
+            "editor.quickSuggestions": true
+        },
+        "git.decorations.enabled": false,
+        "cSpell.enabledLanguageIds": [
+            "asciidoc",
+            "c",
+            "coffeescript",
+            "cpp",
+            "csharp",
+            "css",
+            "git-commit",
+            "go",
+            "handlebars",
+            "html",
+            "jade",
+            "java",
+            "javascript",
+            "javascriptreact",
+            "json",
+            "jsonc",
+            "latex",
+            "less",
+            "markdown",
+            "perl",
+            "php",
+            "plaintext",
+            "powershell",
+            "pug",
+            "python",
+            "restructuredtext",
+            "rust",
+            "scala",
+            "scss",
+            "shellscript",
+            "text",
+            "typescript",
+            "typescriptreact",
+            "xml",
+            "yaml",
+            "yml"
+        ],
+        "cSpell.ignoreWords": [
+            "time"
+        ],
+        "cSpell.numSuggestions": 5,
+        "scm.diffDecorationsGutterWidth": 1,
+        "scm.diffDecorations": "none",
+        "html.format.wrapLineLength": 100,
+        "html.format.wrapAttributes": "force-aligned",
+
+        // --> Color Helper extension
+        "colorHelper.pickerForm": "compact",
+
+        // --> Shellscript
+        "[shellscript]": {
+            "editor.defaultFormatter": "eetami.whitespace-formatter"
+        },
+
+        // Prettier Code Format
+        "[javascript]": {
+            "editor.formatOnSave": true,
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.fontLigatures": "'ss02', 'ss19'"
+        },
+        "prettier.semi": false,
+        "explorer.confirmDelete": false,
+        "git.enabled": false,
+        "material-icon-theme.activeIconPack": "react",
+        "oneDarkPro.editorTheme": "panda",
+        "update.mode": "start",
+        "materialTheme.accent": "Graphite",
+        "[json]": {
+            "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "react-native-tools.projectRoot": "/Users/awl/Desktop/Code/rcvpro",
+        "eslint.enable": false,
+        "eslint.quiet": true,
+        "liveServer.settings.CustomBrowser": "chrome",
+        "files.associations": {
+            "*.php": "php"
+        },
+
+    // -- Material Icon theme
+        "material-icon-theme.hidesExplorerArrows": true,
+        "terminal.integrated.experimentalUseTitleEvent": true,
+
+    // --> Tabulous Terminal tabs
+        "tabulous.activeTabColor": "#95C7AE",
+
+    // >>=*=> Integrated Terminal <==*=<<
+        "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+        "terminal.integrated.cursorStyle": "line",
+        "terminal.external.osxExec": "iTerm.app",
+        "terminal.integrated.cursorBlinking": true,
+        "terminal.integrated.shellArgs.osx": [
+            "-l"
+        ],
+        "terminal.integrated.shell.osx": "/bin/zsh",
+        "terminal.integrated.env.osx": {
+            "PATH": "...:/usr/bin:/bin:..."
+        },
+        "terminal.explorerKind": "external",
+        // ==> Integrated Terminal color theme
+        "workbench.colorCustomizations": {
+            "terminal.intergrated.lineHeight": 15,
+            "terminal.background": "#292c36",
+            "terminal.foreground": "#C7CCD1",
+            "terminalCursor.background": "#C7CCD1",
+            "terminalCursor.foreground": "#C7CCD1",
+            "terminal.ansiBlack": "#1C2023",
+            "terminal.ansiBlue": "#AE95C7",
+            "terminal.ansiBrightBlack": "#747C84",
+            "terminal.ansiBrightBlue": "#AE95C7",
+            "terminal.ansiBrightCyan": "#95AEC7",
+            "terminal.ansiBrightGreen": "#95C7AE",
+            "terminal.ansiBrightMagenta": "#C795AE",
+            "terminal.ansiBrightRed": "#C7AE95",
+            "terminal.ansiBrightWhite": "#F3F4F5",
+            "terminal.ansiBrightYellow": "#AEC795",
+            "terminal.ansiCyan": "#95AEC7",
+            "terminal.ansiGreen": "#95C7AE",
+            "terminal.ansiMagenta": "#C795AE",
+            "terminal.ansiRed": "#C7AE95",
+            "terminal.ansiWhite": "#C7CCD1",
+            "terminal.ansiYellow": "#AEC795",
+        },
+        "terminal.integrated.experimentalRefreshOnResume": true,
+        "terminal.integrated.letterSpacing": 1,
+        "terminal.integrated.macOptionIsMeta": true,
+        "terminal.integrated.macOptionClickForcesSelection": true,
+        "terminal.integrated.fontSize": 13,
+        "terminal.integrated.lineHeight": 1.1,
+    }
