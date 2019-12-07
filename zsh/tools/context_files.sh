@@ -1,5 +1,7 @@
 # --> Display icons based on certain file extensions in directory
 prompt_language() {
+    local         nums='0-1-2-3-4-5-6-7-8-9'
+    local         subs='₀-₁-₂-₃-₄-₅-₆-₇-₈-₉'
 
     local vscode='' docker='' react='' node=''
           npm='' git='' vim='' tmux='' zshrc=''
@@ -104,7 +106,10 @@ prompt_language() {
         else
             icon="$term"
         fi
-    echo "$icon"
+
+    alias vscodei="code-insiders --status | grep -c '|  Window'"
+
+    echo "$icon  %F{045}﬏ $(code-insiders --status | grep -c '|  Window' | tr $nums $subs)"
 }
 
 
