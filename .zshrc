@@ -1,3 +1,4 @@
+export PATH="/usr/local/bin:$PATH"
 # ==> ==> ==> ZSH Theme <== <== <== #
 ZSH_THEME=powerlevel10k/powerlevel10k
 
@@ -36,8 +37,6 @@ fpath=($HOME/zsh-completions/src $fpath)
 
 # --> Initialize completions
 autoload -U compinit && compinit
-compinit -d ~/.cache/zcompdump-$ZSH_VERSION
-
 
 # --> Zsh plugins
 plugins=(
@@ -54,12 +53,11 @@ plugins=(
  zsh-autosuggestions
  jsontools
  web-search
- npm
+#  npm
  screen
  colorize
  iterm2
  almostontop
- gitstatus
  nice-exit-code
  z
  k
@@ -173,7 +171,6 @@ POWERLEVEL9K_TIME_FOREGROUND='109'
 # --> Prompt Prefixes
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{015}╭─"
 POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX="%F{015}\u251C\u2500"
-# POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX="%F{015\u251c──"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{015}╰ "
 
 # --> Add Newline Config
@@ -219,9 +216,9 @@ source $MY_ZSH_TOOLS/disk_space.sh
 # --> Display icons based on directory context
 source $MY_ZSH_TOOLS/context_files.sh
 
-# ----------------------------------------------- #
-#         ==> ==> USEFUL COMMANDS <== <==         #
-# ----------------------------------------------- #
+# -----------------------------------------#
+#     ==> ==> USEFUL COMMANDS <== <==      #
+# -----------------------------------------#
 # --> Output $PWD upon entering a directory
 source $MY_ZSH_TOOLS/echo_path.sh
 # --> Extra line after command
@@ -230,12 +227,16 @@ source $MY_ZSH_TOOLS/newline.sh
 source $MY_ZSH_TOOLS/colorls_shortcuts.sh
 # --> Show color palette
 source $MY_ZSH_TOOLS/showcolors.sh
+# --> Fix permission for directory
+source $MY_ZSH_TOOLS/permission.sh
 # --> Create custom glyph palette
 source $MY_ZSH_TOOLS/font_forge.sh
+# --> Colorls tab completion
+source $(dirname $(gem which colorls))/tab_complete.sh
 
-# -----------------------------------------#
-#         ==> ==> ALIASES <== <==          #
-# ---------------------------------------- #
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+#      ==> ==> ALIASES <== <==     #
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
 source $ALIASES/aliases.sh
 
 # -----------------------------------------#
@@ -254,7 +255,7 @@ source $ZSH_CUSTOM/plugins/zsh-async/async.zsh
 # --> Zsh-syntax-highlighting config
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 # ==> MUST BE FINAL SOURCE -- Zsh-syntax-highlighting <== #
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Users/awl/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[default]=015
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
