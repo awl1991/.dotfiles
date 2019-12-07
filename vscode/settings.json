@@ -28,6 +28,11 @@
         "editor.wrappingIndent": "indent",
         "editor.scrollBeyondLastColumn": 0,
         "editor.quickSuggestionsDelay": 1500,
+        "editor.quickSuggestions": {
+            "other": false,
+            "comments": false,
+            "strings": false
+        },
 
     // --> File Defaults <--
         "files.insertFinalNewline": true,
