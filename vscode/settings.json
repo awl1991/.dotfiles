@@ -2,6 +2,7 @@
     // *!== --> Window Title <-- !==*
         "window.title": "~/${rootName} ￫ ${activeEditorShort}  ",
         "window.zoomLevel": 0,
+        "telemetry.enableTelemetry": false,
 
     // --> Customize UI Plugin
         "customizeUI.font.regular": "Helvetica Nueve",
@@ -40,7 +41,7 @@
         "files.trimTrailingWhitespace": true,
 
     // --> Misc. VSCode Configs <--
-        "workbench.colorTheme": "One Dark Pro",
+        "workbench.colorTheme": "Atom One Dark",
         "search.location": "panel",
         "cSpell.language": "en-US",
         "breadcrumbs.enabled": true,
@@ -238,4 +239,8 @@
         "terminal.integrated.macOptionClickForcesSelection": true,
         "terminal.integrated.fontSize": 13,
         "terminal.integrated.lineHeight": 1.1,
+        "workspace-manager.includeGlobPattern": [
+            "Users/awl/.vscode"
+        ],
+        "window.restoreWindows": "none",
     }
