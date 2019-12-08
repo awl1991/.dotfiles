@@ -1,4 +1,4 @@
-local fira='/Users/awl/nerd-fonts/src/unpatched-fonts/FiraCode/Retina/FiraCode-Retina.ttf'
+local fira='/Users/awl/nerd-fonts/src/unpatched-fonts/FiraCode-Retina.ttf'
 local dotfont='/Users/awl/.dotfiles/fonts/'
 
 forge_font() {
