@@ -39,7 +39,7 @@ prompt_language() {
             [[ $file = 'less.js' ]]                                    && icon="${icon}  %F{051}\ue758%f"
             [[ $file = 'less' ]]                                       && icon="${icon}  %F{024}\ue758%f"
             [[ $file = '.html' ]]                                      && icon="${icon}  %F{009}\uf13b%f"
-            [[ $file = '.py' ]]                                        && icon="${icon}  %F{024}\uf81f%f"
+            [[ $file = '.py' ]]                                        && icon="${icon}  %F{024}\ue606%f"
             [[ $file = '.tsx' ]]                                       && icon="${icon}  %F{032}\ufbe4%f"
             # [[ $file = '.c' ]]                                       && icon="${icon}  %F{012}\ue61e%f"
             [[ $file = '.cpp' ]]                                       && icon="${icon}  %F{010}\ufb71%f"
@@ -107,9 +107,7 @@ prompt_language() {
             icon="$term"
         fi
 
-    alias vscodei="code-insiders --status | grep -c '|  Window'"
-
-    echo "$icon  %F{045}﬏ $(code-insiders --status | grep -c '|  Window' | tr $nums $subs)"
+    echo "$icon%F{240}"
 }
 
 
