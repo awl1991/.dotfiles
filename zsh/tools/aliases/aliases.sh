@@ -27,4 +27,5 @@ alias 		    gitc="git clone"
 alias 		    gits="git status"
 alias 	      gitall="git add -A; git commit -m 'commit all'; git push -u origin master"
 alias		    gitp="git push -u origin master"
+alias         python=python2
 gitcmt() { echo "$(git commit -m ${1})" }
