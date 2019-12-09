@@ -1,29 +1,37 @@
 # --> Display icons based on certain file extensions in directory
 prompt_language() {
-    local         nums='0-1-2-3-4-5-6-7-8-9'
-    local         subs='₀-₁-₂-₃-₄-₅-₆-₇-₈-₉'
-
     local vscode='' docker='' react='' node=''
-          npm='' git='' vim='' tmux='' zshrc=''
+    npm=''    git=''   vim='' tmux='' zshrc=''
 
     local bin="%F{001}%{\e[5m%}\ufb27%f"
-          term="%F{006}\uf489%f" icon=''
+    term="%F{006}\uf489%f" icon=''
 
     local args=(
-        '\.zshrc' '\.tmux.conf' '.vimrc' 'package.json'
-        '\.vscode' 'node_modules' '\.js' '\.json' '\.html'
-        '\.css' '\.scss' '\.php' 'less.js' 'less' '\.py'
-        '\.tsx' '\.html' '\.c' '\.cpp' '\.java' '\.dart'
-        '\.lhs' '\.MD' '\.mysql' '\.rbw' 'require.js' '\.rs'
-        '\.txt' 'sqlite' '\.swift' '\.expo' 'dockerfile'
-        'docker-compose.yml' '.gitignore' '\.db' '\.app'
-        '\.dylib' 'yarn.lock'
+        '\.zshrc \b' '\.tmux.conf \b' '.vimrc \b' 'package.json'
+        '\.vscode \b' 'node_modules \b' '\.js \b' '\.json \b'
+        '\.html \b' '\.css \b' '\.scss \b' '\.php \b' 'less.js \b'
+        'less \b' '\.py \b' '\.tsx \b' '\.c \b' '\.cpp \b' '\.java \b'
+        '\.dart \b' '\.lhs' '\.MD' '\.mysql' '\.rbw' 'require.js' '\.rs'
+        '\.txt \b' 'sqlite \b' '\.swift \b' '\.expo \b' 'dockerfile \b'
+        'docker-compose.yml \b' '.gitignore \b' '\.db \b' '\.app \b'
+        '\.dylib \b' 'yarn.lock \b'
     )
+
+    local icons=(
+        "%F{04}ⓩ" "%F{026}ⓣ" "%F{064}" "%F{244}" "%F{045}﬏"
+        "%F{064}" "%F{142}" "%F{244}" "%F{244}ﬥ" "%F{009}"
+        "%F{026}" "%F{133}" "%F{061}" "%F{051}" "%F{051}"
+        "%F{024}" "%F{032}ﯤ" "%F{012}" "%F{010}ﭱ" "%F{124}"
+        "%F{029}" "%F{130}" "%F{240}" "%F{025}" "%F{160}"
+        "%F{184}" "%F{058}" "%F{007}" "%F{080}" "%F{202}"
+        "%F{074}ﰆ" "%F{039}" "%F{039}" "%F{166}" "%F{230}"
+        "%F{004}" "%F{250}" "%F{244}"
+    )
+
     local pattern=$(echo ${args[@]} | tr " " "|")
 
-    for file in $(ls -a | grep -iEo $pattern | less | sort -u);
+     for file in $(ls -a | grep -iEo $pattern | less | sort -u);
         do
-        if
             [[ $file = '.vscode' && $PWD != '/Users/awl' ]]            && vscode="  %F{045}\ue70c%f"
             [[ $file = 'node_modules' ]]                               && node="  %F{064}\uf2b8%f"
             [[ $file = '.expo' && $PWD != '/Users/awl' ]]              && react="  %F{074}\ufc06%f"
@@ -107,17 +115,9 @@ prompt_language() {
             icon="$term"
         fi
 
-    echo "$icon%F{240}"
+    echo "$icon"
 }
 
 
-# local icons=(
-    #     "%F{004}\uf489%f" "%F{026}\uf0db%f" "%F{64}\ue62b%f" "%F{244}\ufb25%f"
-    #     "%F{045}\ue70c%f" "%F{064}\uf898%f" "%F{142}\uf81d%f" "%F{244}\ufb25%f" "%F{009}\uf13b%f"
-    #     "%F{026}\ue749%f" "%F{133}\ue74b%f" "%F{061}\uf81e%f" "%F{051}\ue758%f" "%F{051}\ue758%f" "%F{024}\uf81f%f"
-    #     "%F{032}\ufbe4%f" "\.html" "%F{012}\ue61e%f" "%F{010}\ufb71%f" "%F{124}\ue256%f" "%F{029}\ue798%f"
-    #     "%F{130}\ue777%f" "%F{240}\uf48a%f" "%F{025}\ue704" "%F{160}\ue739%f" "%F{184}\ue770%f" "%F{058}\ue7a8%f"
-    #     "%F{007}\uf89d%f" "%F{80}\ue7c4%f" "%F{202}\ue755%f" "%F{074}\ufc06%f" "%F{039}\uf308%f"
-    #     "%F{039}\uf308%f" "%F{166}\uf113%f" "%F{230}\ue706%f" "%F{004}\ue713%f"
-    #     "%F{014}\uf302%f"
-    # )
+
+    # echo "$icon%F{240}"
