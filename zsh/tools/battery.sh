@@ -48,9 +48,9 @@ prompt_zsh_battery_level() {
   fi
 
     # ~~> device charging
-  [[ $charging = "true" ]] && color='%F{143}' && symbol=''
+  [[ $charging = "true" ]] && color='%F{143}' && symbol=' '
     # ~~> fully charged
-  [[ $charging = "true" && $percentage = 100 ]] && color='%F{green}' && symbol=""
+  [[ $charging = "true" && $percentage = 100 ]] && color='%F{green}' && symbol=" "
 
   # >=> display <=< #
   echo -n " %{$color%}${symbol}"
