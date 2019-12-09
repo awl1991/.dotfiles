@@ -1,10 +1,12 @@
 # --> Display icons based on certain file extensions in directory
 prompt_language() {
+    local icon=''
+
     local vscode='' docker='' react='' node=''
-    npm=''    git=''   vim='' tmux='' zshrc=''
+         npm='' git='' vim='' tmux='' zshrc=''
 
     local bin="%F{001}%{\e[5m%}\ufb27%f"
-    term="%F{006}\uf489%f" icon=''
+          term="%F{006}\uf489%f"
 
     local args=(
         '\.zshrc \b' '\.tmux.conf \b' '.vimrc \b' 'package.json'
