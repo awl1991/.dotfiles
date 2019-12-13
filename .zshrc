@@ -1,4 +1,5 @@
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # ==> ==> ==> ZSH Theme <== <== <== #
@@ -93,7 +94,7 @@ typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,
 typeset -g POWERLEVEL9K_VCS_LOADING_VISUAL_IDENTIFIER_COLOR=244
 typeset -g POWERLEVEL9K_VCS_BACKENDS=(git)
 typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
- typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='􀄵'
+typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='%F{02} 􀄵 %f'
 
 # --> Path display
 POWERLEVEL9K_SHORTEN_DIR_LENGTH='3'

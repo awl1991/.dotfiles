@@ -27,7 +27,7 @@
         "editor.formatOnSaveTimeout": 1.2,
         "editor.wordWrapColumn": 100,
         "editor.wrappingIndent": "indent",
-        "editor.scrollBeyondLastColumn": 0,
+        "editor.scrollBeyondLastColumn": 100,
         "editor.quickSuggestionsDelay": 1500,
         "editor.quickSuggestions": {
             "other": false,
@@ -243,4 +243,5 @@
             "Users/awl/.vscode"
         ],
         "window.restoreWindows": "none",
+        "editor.scrollBeyondLastLine": false,
     }
