@@ -12,4 +12,3 @@ vscode() {
 		echo "%F{237}$vs_i "
 	fi
 }
-functions -M vscode >/dev/null
