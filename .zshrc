@@ -118,7 +118,7 @@ POWERLEVEL9K_WHITESPACE_BETWEEN_RIGHT_SEGMENTS=''
 # --> Left Icons
 POWERLEVEL9K_APPLE_ICON='  '
 POWERLEVEL9K_CONTEXT_TEMPLATE="\uf823"
-POWERLEVEL9K_CUSTOM_VSCODE="vscode"
+POWERLEVEL9K_CUSTOM_VSCODE="$(printf vscode)"
 
 # --> Left Foregrounds
 POWERLEVEL9K_OS_ICON_FOREGROUND='242'
@@ -133,9 +133,8 @@ POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='236'
 POWERLEVEL9K_VCS_BACKGROUND="016"
 
 # --> Left Newline Icons
-POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="%F{000}~ "
-local home_i="\ue31f" #
-POWERLEVEL9K_HOME_ICON="%K{23} /$home_i  "
+POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="%F{000}ﰣ "
+POWERLEVEL9K_HOME_ICON="%K{23} \ue31f  "
 POWERLEVEL9K_HOME_SUB_ICON='%F{023} \ue32c %f'
 POWERLEVEL9K_FOLDER_ICON=' \ue32c '
 POWERLEVEL9K_ETC_ICON='  '
@@ -249,7 +248,7 @@ source $ALIASES/aliases.sh
 #  ==> ==> NEEDED AT END OF FILE <== <==   #
 # ---------------------------------------- #
 # --> P10K
-source $ZSH_CUSTOM/themes/powerlevel10k/powerlevel10k.zsh-theme
+source ./powerlevel10k powerlevel10k
 # --> Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 # --> Iterm2 shell integration
