@@ -34,12 +34,13 @@ function my_git_formatter() {
     local         nums='0-1-2-3-4-5-6-7-8-9'
     local         subs='₀-₁-₂-₃-₄-₅-₆-₇-₈-₉'
     local    divider_i="${grey}⦚${end}"
-    local        git_i="${gitcolor} ﯙ"
+    local        git_i="${gitcolor}ﯙ"
     local     branch_i="${clean}$(echo '')"
     local     staged_i="ﰖ"
     local   unstaged_i=""
     local  untracked_i=""
     local   conflict_i=""
+
     # ==> Vcs info
     local   res
     local where

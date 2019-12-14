@@ -30,9 +30,9 @@ move_icons() {
 	fi
 
 	if [ ! -f $htmlfile ]
-		then print -P '\n\n %F{244} -- >=> %F{14}Done  %F{034}\n'
+		then print -P '\n\n%F{244} --  >=> %F{14}Done  %F{034}\n'
 	else
 		print -P $(rm $htmlfile)
-		print -P '%F{244} 5. --> %F{14}...Removed generated html file %F{244} %F{10}\n\n %F{244} >=> %F{14}Done  %F{034}\n'
+		print -P '%F{244} 5. --> %F{14}...Removed generated html file %F{244} %F{10}\n\n%F{244} --   >=> %F{14}Done  %F{034}\n'
 	fi
 }

@@ -29,6 +29,6 @@ zsh_wifi_signal(){
           [[ $signal -gt -60 ]] && color='%F{2}'  && tcolor='%F{2}'
           [[ $signal -lt -70 ]] && color='%F{10}' && tcolor='%F{059}'
 
-        echo "%{$tcolor%} $icon%{$color%}$ssid "
+        echo "%{$tcolor%} $icon%{$color%}$ssid  "
   fi
 }
