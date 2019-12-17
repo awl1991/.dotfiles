@@ -4,7 +4,7 @@ vscode() {
     local subs='₀-₁-₂-₃-₄-₅-₆-₇-₈-₉'
 	local ws="$(code-insiders --status | grep -c '|  Window (~/')"
 	local ws_num=$(($ws>0))
-	local vs_i=" \ue37d "
+	local vs_i="\ue37d "
 
 	if [ $ws_num = 1 ]
 		then echo "%F{030}$vs_i$(echo $ws | tr $nums $subs)"

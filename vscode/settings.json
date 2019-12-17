@@ -244,4 +244,5 @@
         ],
         "window.restoreWindows": "none",
         "editor.scrollBeyondLastLine": false,
+        "workbench.fontAliasing": "antialiased",
     }
