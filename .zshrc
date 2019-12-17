@@ -14,7 +14,7 @@ DISABLE_AUTO_TITLE=true
 zle_highlight+=(paste:none)
 export HOMEBREW_NO_AUTO_UPDATE=1
 local p="$(date '+%p')"
-	  p=$(echo "$p" | sed -e 's/AM/ᴀᴍ/' -e 's/PM/ᴘᴍ/')
+p=$(echo "$p" | sed -e 's/AM/ᴀᴍ/' -e 's/PM/ᴘᴍ/')
 local time_format="$(date '+%-I:%M')"
 
 # Zsh-autosuggestions config
@@ -92,6 +92,8 @@ typeset -g POWERLEVEL9K_VCS_LOADING_CONTENT_EXPANSION='${$((my_git_formatter(0))
 typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=-1
 typeset -g POWERLEVEL9K_VCS_LOADING_VISUAL_IDENTIFIER_COLOR=244
 typeset -g POWERLEVEL9K_VCS_BACKENDS=(git)
+
+# --> Transient prompt config
 typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
 typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='%F{02} 􀄵 %f'
 
@@ -133,9 +135,7 @@ POWERLEVEL9K_VCS_BACKGROUND="016"
 
 # --> Left Newline Icons
 POWERLEVEL9K_HOME_FOLDER_ABBREVIATION='%F{0} ̴'
-# POWERLEVEL9K_HOME_ICON="%K{23}\ue31f  %K{16}%F{23}%F{08}%K{016}─%F{23}%k"
 POWERLEVEL9K_HOME_ICON="%K{23}\ue31f "
-# POWERLEVEL9K_HOME_SUB_ICON='%F{023}\ue32c  %f%K{16}%F{30}%F{08}%K{016}─%F{30}%k'
 POWERLEVEL9K_HOME_SUB_ICON='%F{023}\ue32c '
 POWERLEVEL9K_FOLDER_ICON=' \ue32c '
 POWERLEVEL9K_ETC_ICON='  '
@@ -148,6 +148,8 @@ POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='30'
 # Left Newline Foregrounds
 POWERLEVEL9K_DIR_HOME_FOREGROUND='0'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='22'
+POWERLEVEL9K_DIR_PATH_SEPARATOR_FOREGROUND="234"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="23"
 
 # --> Right Prompt Icons
 POWERLEVEL9K_STATUS_OK_ICON="  "
@@ -158,18 +160,31 @@ POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
 POWERLEVEL9K_CUSTOM_BATTERY_STATUS="prompt_zsh_battery_level"
 POWERLEVEL9K_TIME_FORMAT="  $time_format$p "
 POWERLEVEL9K_TIME_ICON=''
+POWERLEVEL9K_CUSTOM_PROMPT_SPACE='prompt_space'
+
+# --> Right Newline Segments
+POWERLEVEL9K_CUSTOM_PROMPT_LANGUAGE="prompt_language"
+
+# --> Right Newline Foreground
+POWERLEVEL9K_CUSTOM_PROMPT_LANGUAGE_FOREGROUND='white'
+
+# --> Right Newline Backgrounds
+POWERLEVEL9K_CUSTOM_PROMPT_LANGUAGE_BACKGROUND=''
 
 # --> Right Prompt Backgrounds
 POWERLEVEL9K_CUSTOM_BATTERY_STATUS_BACKGROUND=''
 POWERLEVEL9K_TIME_BACKGROUND=''
 POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_BACKGROUND=''
 POWERLEVEL9K_STATUS_BACKGROUND=''
-
+POWERLEVEL9K_CUSTOM_PROMPT_SPACE_BACKGROUND=''
 
 # --> Right Prompt Foregrounds
 POWERLEVEL9K_STATUS_OK_FOREGROUND='022'
 POWERLEVEL9K_STATUS_FAIL_FOREGROUND="001"
 POWERLEVEL9K_TIME_FOREGROUND='109'
+POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND="016"
+POWERLEVEL9K_CUSTOM_PROMPT_SPACE_FOREGROUND='white'
+POWERLEVEL9K_DIR_PATH_HIGHLIGHT_BOLD=false
 
 # --> Prompt Prefixes
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{08}╭─"
@@ -177,39 +192,24 @@ POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX="%F{08}\u251C\u2500"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{08}╰ "
 
 # --> Add Newline Config
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 
 # -->  Segment Separators
-
-# POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=""
-POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
+typeset -g POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
+typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
 
 # --> Subsegment Separators
-POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=''
-POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='%F{250}%f'
-typeset -g POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
+typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=''
+typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='%F{250}%f'
 
 # --> Zsh Auto Suggestions Color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23,bg=grey"
-POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND="016"
-POWERLEVEL9K_DIR_PATH_HIGHLIGHT_BOLD=false
-POWERLEVEL9K_DIR_PATH_SEPARATOR_FOREGROUND="234"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="23"
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="237"
-POWERLEVEL9K_CUSTOM_PROMPT_LANGUAGE="prompt_language"
-POWERLEVEL9K_CUSTOM_PROMPT_LANGUAGE_BACKGROUND=''
-POWERLEVEL9K_CUSTOM_PROMPT_LANGUAGE_FOREGROUND='white'
-POWERLEVEL9K_CUSTOM_PROMPT_SPACE='prompt_space'
-POWERLEVEL9K_CUSTOM_PROMPT_SPACE_BACKGROUND=''
-POWERLEVEL9K_CUSTOM_PROMPT_SPACE_FOREGROUND='white'
 
-
-
-# ----------------------------------------------- #
-#        ==> ==> FUNCTION SEGMENTS <== <==        #
-# ----------------------------------------------- #
+#────────────────────────────────────╮
+#  ==> ==> FUNCTION SEGMENTS <== <==
+#───────────────────────────────────╯
 source ~/.bash_profile
 # --> Custom WiFi function
 source $MY_ZSH_TOOLS/wifi.sh
@@ -217,37 +217,37 @@ source $MY_ZSH_TOOLS/wifi.sh
 source $MY_ZSH_TOOLS/battery.sh
 # --> Display available disk space
 source $MY_ZSH_TOOLS/disk_space.sh
-# --> Display icons based on directory context
+# --> Contextual icons
 source $MY_ZSH_TOOLS/context_files.sh
 # --> Vscode windows open
 source $MY_ZSH_TOOLS/vscode.sh
 
-# -----------------------------------------#
-#     ==> ==> USEFUL COMMANDS <== <==      #
-# -----------------------------------------#
-# --> Output $PWD upon entering a directory
+#───────────────────────────────────╮
+#  ==> ==> USEFUL COMMANDS <== <==
+#──────────────────────────────────╯
+# --> Output $PWD
 source $MY_ZSH_TOOLS/echo_path.sh
 # --> Extra line after command
 source $MY_ZSH_TOOLS/newline.sh
-# --> colorls shortcuts
-source $MY_ZSH_TOOLS/colorls_shortcuts.sh
 # --> Show color palette
 source $MY_ZSH_TOOLS/showcolors.sh
 # --> Fix permission for directory
 source $MY_ZSH_TOOLS/permission.sh
 # --> Create custom glyph palette
 source $MY_ZSH_TOOLS/font_forge.sh
-# --> Colorls tab completion
+# --> colorls shortcuts
+source $MY_ZSH_TOOLS/colorls_shortcuts.sh
+# --> colorls tab completion
 source $(dirname $(gem which colorls))/tab_complete.sh
 
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
-#      ==> ==> ALIASES <== <==     #
-#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+#═════════════════════════╗
+# ==> ==> ALIASES <== <==
+#════════════════════════╝
 source $ALIASES/aliases.sh
 
-# -----------------------------------------#
-#  ==> ==> NEEDED AT END OF FILE <== <==   #
-# ---------------------------------------- #
+#───────────────────────────────────────╮
+# ==> ==> NEEDED AT END OF FILE <== <==
+#──────────────────────────────────────╯
 # --> P10K
 source ~/powerlevel10k powerlevel10k
 # --> Oh My Zsh
@@ -258,9 +258,9 @@ source ~/.iterm2_shell_integration.zsh
 source $ZSH_CUSTOM/plugins/zsh-async/async.zsh
 # --> z
 . $ZSH/plugins/z/z.sh
-# --> Zsh-syntax-highlighting config
+# --> Iterm shell integration
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
-# ==> MUST BE FINAL SOURCE -- Zsh-syntax-highlighting <== #
+# --> Zsh syntax highlighting
 source /Users/awl/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[default]=015
@@ -283,4 +283,5 @@ ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=138
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=138
+# --> Fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

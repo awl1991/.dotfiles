@@ -85,7 +85,7 @@ function my_git_formatter() {
     # ->     Ahead of remote
     (( VCS_STATUS_COMMITS_AHEAD  )) && res+="${clean}%F{02}${VCS_STATUS_COMMITS_AHEAD} ${end}"
     # ->   Number of Stashes
-    (( VCS_STATUS_STASHES        )) && res+="${space}${stashed}$(echo${VCS_STATUS_STASHES} | tr $nums $subs)${end}"
+    (( VCS_STATUS_STASHES        )) && res+="${space}${stashed}$(echo ${VCS_STATUS_STASHES} | tr $nums $subs)${end}"
     # ->       Unusual state
     [[ -n $VCS_STATUS_ACTION     ]] && res+="${space}${conflicted} ${VCS_STATUS_ACTION} ${end}"
     # ->     Merge conflicts

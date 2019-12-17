@@ -24,8 +24,8 @@ zsh_wifi_signal(){
 
           [[ $ssid ]] && icon='\uf424  '
           [[ $channel = '6' || $channel = '1' ]]  && icon='\uf838'
-          [[ $bssid = 'c6:52:61:59:8b:33' ]]      && icon=''
-          [[ $bssid = 'c6:52:61:59:8b:33' ]]      && ssid='  '
+          [[ $ssid = '==> AWL Home <==' ]]      && icon=''
+          [[ $ssid = '==> AWL Home <==' ]]      && ssid='  '
           [[ $signal -gt -60 ]] && color='%F{2}'  && tcolor='%F{2}'
           [[ $signal -lt -70 ]] && color='%F{10}' && tcolor='%F{059}'
 
