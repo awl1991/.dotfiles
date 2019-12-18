@@ -1,4 +1,4 @@
-# --> Display available disk space
+# --> Output available disk space
 prompt_space(){
   local disk_space=$(df -H / | grep '/$' | awk '{print $4}')
   local color="%F{058}"
