@@ -52,7 +52,7 @@ function my_git_formatter() {
 
     [[ ${VCS_STATUS_COMMITS_AHEAD} > 0 ]] && dynspace=''
 
-    # ~~> >=> Add segments from PK9 <=< <~~ #
+    # ~~> Add segments from PK9 <~~ #
     if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
       res+="$git_i $divider_i$branch_i"
       # =>  Branch
@@ -93,7 +93,7 @@ function my_git_formatter() {
     # ->      Staged commits
     (( VCS_STATUS_NUM_STAGED     )) && res+="${green}${staged_i}$(echo ${VCS_STATUS_NUM_STAGED} | tr $nums $subs)${end}${space}"
     # ->    Unstaged commits
-    (( VCS_STATUS_NUM_UNSTAGED   )) && res+="${modified}${unstaged_i}$(echo ${VCS_STATUS_NUM_UNSTAGED} | tr $nums $subs)${end}"
+    (( VCS_STATUS_NUM_UNSTAGED   )) && res+="${modified}${unstaged_i}$(echo ${VCS_STATUS_NUM_UNSTAGED} | tr $nums $subs) ${end}"
     # ->     Untracked files
     (( VCS_STATUS_NUM_UNTRACKED  )) && res+="${untracked}${untracked_i}$(echo ${VCS_STATUS_NUM_UNTRACKED} | tr $nums $subs)${end}"
 
