@@ -9,6 +9,6 @@ vscode() {
 	if [ $ws_num = 1 ]
 		then echo "%F{030}$vs_i$(echo $ws | tr $nums $subs)"
 	else
-		echo "%F{237}$vs_i "
+		echo "%F{016}$vs_i "
 	fi
 }
