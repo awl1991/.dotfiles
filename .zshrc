@@ -260,7 +260,7 @@ source $ZSH_CUSTOM/plugins/zsh-async/async.zsh
 . $ZSH/plugins/z/z.sh
 # --> Iterm shell integration
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
-# --> Zsh syntax highlighting
+# --> zsh syntax highlighting
 source /Users/awl/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[default]=015
