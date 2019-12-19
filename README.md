@@ -43,7 +43,7 @@
      <li>
       Available memory segment
      </li>
-      <img height="30px" src="screenshots/memory_demo.png">
+      <img height="45px" src="screenshots/memory_demo.png">
      <li>
       Dynamic battery segment
      </li>
