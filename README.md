@@ -43,6 +43,15 @@
   <h3>Right Bottom Prompt</h3>
   <ul style="margin-top:-15px">
      <li>
-      Glyphs indicating relevant dev files in current working directory
-     </li>
+      Glyphs indicating relevant dev files in current working directory. Glyphs update dynamically upon entering a directory
+      </li>
+      <ul>
+        <li>
+          Currently recognized files
+          <ul>
+          <img width="90%" src="screenshots/contextual_glyphs.png"><br>
+            zshrc | tmux | vim | dockerfile | node modules | react native (expo) | dylib | markdown | C | dart | db | html | java | javascript | json | haskell | sql | php | python | ruby | rust | sass | swift | typescript | text | less | require js | sqlite
+          </ul>
+      </li>
+     </ul>
   </ul>
