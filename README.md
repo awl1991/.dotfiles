@@ -28,7 +28,7 @@
     <li>
       Minimal exit status
     </li>
-      <img height="20px" src="screenshots/exit_status_demo.png">
+      <img height="25px" src="screenshots/exit_status_demo.png">
      <li>
       Wifi status
      </li>
