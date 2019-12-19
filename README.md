@@ -50,7 +50,7 @@
      <li>
       Glyphs indicating relevant dev files in current working directory
       </li>
-       <img width="550px" src="screenshots/contextual_glyphs.png">
+       <img width="570px" src="screenshots/contextual_glyphs.png">
       <ul>
         <li>
         Glyphs update dynamically upon entering a directory
