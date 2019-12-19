@@ -49,7 +49,7 @@
         <li>
         Glyphs update dynamically upon entering a directory
         </li>
-        <li>
+        <li width="520px">
           Currently recognized files
           <ul>
           <img width="520px" src="screenshots/contextual_glyphs.png"><p align="center">
