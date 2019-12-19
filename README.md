@@ -61,7 +61,7 @@
         </li>
         <li>
           Currently recognized files
-          <br>&nbsp <i>zshrc <b>·</b> tmux <b>·</b> vim <b>·</b> dockerfile <b>·</b> node modules <b>·</b> react native (expo) <b>·</b> dylib <br>&nbsp md <b>·</b> c/cpp <b>·</b> dart <b>·</b> db <b>·</b> html <b>·</b> java <b>·</b> javascript <b>·</b> json <b>·</b> haskell <b>·</b> sql <b>·</b> php <br>&nbsp python <b>·</b> ruby <b>·</b> rust <b>·</b> sass <b>·</b> swift <b>·</b> typescript <b>·</b> text <b>·</b> less <b>·</b> require js <b>·</b> sqlite</i>
+          <br>&nbsp <i>zshrc <b>·</b> tmux <b>·</b> vim <b>·</b> dockerfile <b>·</b> node modules <b>·</b> react native (expo) <b>·</b> dylib <b>·</b> md <br>&nbsp c/cpp <b>·</b> dart <b>·</b> db <b>·</b> html <b>·</b> java <b>·</b> javascript <b>·</b> json <b>·</b> haskell <b>·</b> sql <b>·</b> php <b>·</b> python <br>&nbsp ruby <b>·</b> rust <b>·</b> sass <b>·</b> swift <b>·</b> typescript <b>·</b> text <b>·</b> less <b>·</b> require js <b>·</b> sqlite</i>
       </li>
      </ul>
   </ul>
