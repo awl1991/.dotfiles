@@ -9,19 +9,22 @@
     <li>
       Segment indicating OS System
     </li>
+      <img  height="25px" src="screenshots/os_demo.png">
     <li>
       Segment showing number of open VS Code workspaces
     </li>
+      <img  height="30px" src="screenshots/vscode_demo.png">
   </ul>
   <h3>Left Bottom Prompt</h3>
   <ul style="margin-top:-15px">
      <li>
-      Dynamic path display<br>
-         <img  height="30px" src="screenshots/path_demo.png">
+      Dynamic path display
      </li>
+      <img  height="28px" src="screenshots/path_demo.png">
      <li>
-      Visually pleasing git status with carefully selected glyphs
+      Git status with carefully selected glyphs
      </li>
+      <img  height="25px" src="screenshots/git_demo.png">
   </ul>
   <h3>Right Top Prompt</h3>
   <ul style="margin-top:-15px">
