@@ -52,12 +52,12 @@
   <h3>Right Bottom Prompt</h3>
   <ul style="margin-top:-15px">
      <li>
-      <b>Glyphs indicating relevant dev files in current working directory</b>
+      <b>Contextual glyphs indicating relevant dev files in current working directory</b>
       </li>
        &nbsp&nbsp<img width="570px" src="screenshots/contextual_glyphs.png">
       <ul>
         <li>
-        <b>Contextual glyphs update dynamically upon entering a directory</b>
+        <b>Glyphs update dynamically upon entering a directory</b>
         </li>
         <li>
           <b>Currently recognized files</b>
