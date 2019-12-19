@@ -16,7 +16,9 @@
   <h3>Left Bottom Prompt</h3>
   <ul style="margin-top:-15px">
      <li>
-      Dynamic path display &nbsp<img style="border:solid red;" height="16px" src="screenshots/path_demo.png">
+      Dynamic path display<br>
+         <img  height="30px" src="screenshots/path_demo.png">
+      </ul>
      </li>
      <li>
       Visually pleasing git status with carefully selected glyphs
@@ -25,8 +27,9 @@
   <h3>Right Top Prompt</h3>
   <ul style="margin-top:-15px">
     <li>
-      Minimal exit status &nbsp<img height="11px" src="screenshots/exit_status_demo.png">
+      Minimal exit status
     </li>
+    <img height="20px" src="screenshots/exit_status_demo.png">
      <li>
       Wifi status
      </li>
