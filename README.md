@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img  height="90px" src="screenshots/logo.png"><br>Lux Prompt
+  <img  height="90px" src="screenshots/logo.png"><br>Majestic Prompt
 </h1>
 <p>
  <img width="100%" src="screenshots/promptdemo.png">
@@ -7,61 +7,61 @@
   <h3>Left Top Prompt</h3>
   <ul>
     <li>
-      <b>Segment indicating OS System</b>
+      OS System
     </li>
       &nbsp&nbsp<img  height="30px" src="screenshots/os_demo.png">
     <li>
-      <b>Segment showing number of open VS Code workspaces</b>
+      Active VS Code workspaces
     </li>
       &nbsp&nbsp<img  height="30px" src="screenshots/vscode_demo.png">
   </ul>
   <h3>Left Bottom Prompt</h3>
   <ul>
      <li>
-      <b>Dynamic path display</b>
+      Dynamic path display
      </li>
       &nbsp&nbsp<img  height="30px" src="screenshots/path_demo.png">
      <li>
-      <b>Git status with carefully selected glyphs</b>
+      Git status
      </li>
       &nbsp&nbsp<img  height="30px" src="screenshots/git_demo.png">
   </ul>
   <h3>Right Top Prompt</h3>
   <ul>
     <li>
-      <b>Minimal exit status</b>
+      Exit status
     </li>
       &nbsp&nbsp<img height="30px" src="screenshots/exit_status_demo.png">
      <li>
-      <b>Wifi status</b>
+      Wifi status
      </li>
       &nbsp&nbsp<img  height="30px" src="screenshots/wifi_demo.png">
      <li>
-     <b>Time segment</b>
+     Time segment
      </li>
       &nbsp&nbsp<img  height="30px" src="screenshots/time_demo.png">
      <li>
-      <b>Available memory segment</b>
+      System memory
      </li>
       &nbsp&nbsp<img height="30px" src="screenshots/memory_demo.png">
      <li>
-      <b>Dynamic battery segment</b>
+      Battery stages
      </li>
       &nbsp&nbsp<img  height="30px" src="screenshots/battery_demo.png">
   </ul>
   <h3>Right Bottom Prompt</h3>
   <ul>
      <li>
-      <b>Contextual glyphs indicating relevant dev files in current working directory</b>
+      Contextual glyphs indicating relevant dev files in current working directory
       </li>
        &nbsp&nbsp<img width="550px" src="screenshots/contextual_glyphs.png">
       <ul>
         <li>
-        <b>Glyphs update dynamically upon entering a directory</b>
+        Glyphs update dynamically upon entering a directory
         </li>
         <li>
-          <b>Currently recognized files</b>
-          <br>&nbsp <i>zshrc <b>·</b> tmux <b>·</b> vim <b>·</b> dockerfile <b>·</b> node modules <b>·</b> react native (expo) <b>·</b> dylib <b>·</b> md <br>&nbsp c/cpp <b>·</b> dart <b>·</b> db <b>·</b> html <b>·</b> java <b>·</b> javascript <b>·</b> json <b>·</b> haskell <b>·</b> sql <b>·</b> php <b>·</b> python <br>&nbsp ruby <b>·</b> rust <b>·</b> sass <b>·</b> swift <b>·</b> typescript <b>·</b> text <b>·</b> less <b>·</b> require js <b>·</b> sqlite</i>
+          Currently recognized files
+          <br>&nbsp <i>zshrc · tmux · vim · dockerfile · node modules · react native (expo) · dylib · md <br>&nbsp c/cpp · dart · db · html · java · javascript · json · haskell · sql · php · python <br>&nbsp ruby · rust · sass · swift · typescript · text · less · require js · sqlite</i>
       </li>
      </ul>
   </ul>
