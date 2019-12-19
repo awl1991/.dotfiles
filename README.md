@@ -52,8 +52,10 @@
         <li>
           Currently recognized files
           <ul>
+          <center>
           <img width="520px" src="screenshots/contextual_glyphs.png"><br>
             zshrc | tmux | vim | dockerfile | node modules | react native (expo) | dylib <br> markdown | C | dart | db | html | java | javascript | json | haskell | sql | php <br> python | ruby | rust | sass | swift | typescript | text | less | require js | sqlite
+            </center>
           </ul>
       </li>
      </ul>
