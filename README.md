@@ -43,9 +43,12 @@
   <h3>Right Bottom Prompt</h3>
   <ul style="margin-top:-15px">
      <li>
-      Glyphs indicating relevant dev files in current working directory<br>*Glyphs update dynamically upon entering a directory
+      Glyphs indicating relevant dev files in current working directory
       </li>
       <ul>
+        <li>
+        Glyphs update dynamically upon entering a directory
+        </li>
         <li>
           Currently recognized files
           <ul>
