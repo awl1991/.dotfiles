@@ -54,7 +54,7 @@
      <li>
       <b>Contextual glyphs indicating relevant dev files in current working directory</b>
       </li>
-       &nbsp&nbsp<img width="560px" src="screenshots/contextual_glyphs.png">
+       &nbsp&nbsp<img width="550px" src="screenshots/contextual_glyphs.png">
       <ul>
         <li>
         <b>Glyphs update dynamically upon entering a directory</b>
