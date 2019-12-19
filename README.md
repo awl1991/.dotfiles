@@ -28,16 +28,19 @@
     <li>
       Minimal exit status
     </li>
-    <img height="20px" src="screenshots/exit_status_demo.png">
+      <img height="20px" src="screenshots/exit_status_demo.png">
      <li>
       Wifi status
      </li>
+      <img  height="25px" src="screenshots/wifi_demo.png">
      <li>
       Time segment
      </li>
+      <img  height="25px" src="screenshots/time_demo.png">
      <li>
       Available memory segment
      </li>
+      <img height="25px" src="screenshots/memory_demo.png">
      <li>
       Dynamic battery segment
      </li>
