@@ -61,7 +61,7 @@
         </li>
         <li>
           Currently recognized files
-          <br>&nbsp <i>zshrc <b>·</b> tmux <b>·</b> vim <b>·</b> dockerfile <b>·</b> node modules <b>·</b> react native (expo) <b>·</b> dylib <br>&nbsp markdown <b>·</b> C <b>·</b> dart <b>·</b> db <b>·</b> html <b>·</b> java <b>·</b> javascript <b>·</b> json <b>·</b> haskell <b>·</b> sql <b>·</b> php <br>&nbsp python <b>·</b> ruby <b>·</b> rust <b>·</b> sass <b>·</b> swift <b>·</b> typescript <b>·</b> text <b>·</b> less <b>·</b> require js <b>·</b> sqlite</i>
+          <br>&nbsp <i>zshrc <b color="grey">·</b> tmux <b color="grey">·</b> vim <b color="grey">·</b> dockerfile <b color="grey">·</b> node modules <b color="grey">·</b> react native (expo) <b color="grey">·</b> dylib <br>&nbsp markdown <b color="grey">·</b> C <b color="grey">·</b> dart <b color="grey">·</b> db <b color="grey">·</b> html <b color="grey">·</b> java <b color="grey">·</b> javascript <b color="grey">·</b> json <b color="grey">·</b> haskell <b color="grey">·</b> sql <b color="grey">·</b> php <br>&nbsp python <b color="grey">·</b> ruby <b color="grey">·</b> rust <b color="grey">·</b> sass <b color="grey">·</b> swift <b color="grey">·</b> typescript <b color="grey">·</b> text <b color="grey">·</b> less <b color="grey">·</b> require js <b color="grey">·</b> sqlite</i>
       </li>
      </ul>
   </ul>
