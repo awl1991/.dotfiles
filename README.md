@@ -47,7 +47,7 @@
      <li>
       Dynamic battery segment
      </li>
-      <img  height="30px" src="screenshots/battery_demo.png">
+      <img  height="25px" src="screenshots/battery_demo.png">
   </ul>
   <h3>Right Bottom Prompt</h3>
   <ul style="margin-top:-15px">
