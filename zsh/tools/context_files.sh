@@ -67,7 +67,7 @@ prompt_language() {
             [[ $file = '.vimrc' ]]                                     && vim="  %F{64}\ue7c5%f"
             [[ $file = '.tmux.conf' ]]                                 && tmux="%F{026}  ⓣ%f"
             [[ $file = '.app' ]]                                       && icon="  %F{004}\ue713%f"
-            [[ $file = '.dylib' ]]                                     && icon="  %F{014}\uf302%f"
+            [[ $file = '.dylib' ]]                                     && icon="  %F{243}\ue0cf%f"
             [[ $file = '.zshrc' ]]                                     && zshrc="  %F{004}ⓩ%f"
         done
 
