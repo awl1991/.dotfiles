@@ -49,7 +49,7 @@
         <li>
           Currently recognized files
           <ul>
-          <img width="90%" src="screenshots/contextual_glyphs.png"><br>
+          <img width="100px" src="screenshots/contextual_glyphs.png"><br>
             zshrc | tmux | vim | dockerfile | node modules | react native (expo) | dylib | markdown | C | dart | db | html | java | javascript | json | haskell | sql | php | python | ruby | rust | sass | swift | typescript | text | less | require js | sqlite
           </ul>
       </li>
