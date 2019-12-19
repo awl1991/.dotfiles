@@ -57,7 +57,7 @@
        &nbsp&nbsp<img width="570px" src="screenshots/contextual_glyphs.png">
       <ul>
         <li>
-        <b>Glyphs update dynamically upon entering a directory</b>
+        <b>Contextual glyphs update dynamically upon entering a directory</b>
         </li>
         <li>
           <b>Currently recognized files</b>
