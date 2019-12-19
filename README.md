@@ -1,5 +1,5 @@
 <h1>
-  Ultimate ZSH Prompt
+  <img  height="25px" src="screenshots/logo.png"> &nbsp Lux Prompt
 </h1>
 <p>
  <img width="100%" src="screenshots/promptdemo.png">
