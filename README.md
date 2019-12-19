@@ -18,7 +18,6 @@
      <li>
       Dynamic path display<br>
          <img  height="30px" src="screenshots/path_demo.png">
-      </ul>
      </li>
      <li>
       Visually pleasing git status with carefully selected glyphs
