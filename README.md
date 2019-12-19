@@ -2,7 +2,7 @@
   Ultimate ZSH Prompt
 </h1>
 <p>
- <img width="600px" src="screenshots/promptdemo.png">
+ <img width="700px" src="screenshots/promptdemo.png">
 </p>
   <h3>Left Top Prompt</h3>
   <ul style="margin-top:-15px">
