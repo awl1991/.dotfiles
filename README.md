@@ -4,7 +4,7 @@
 <p>
  <img width="600px" src="screenshots/promptdemo.png">
 </p>
-  <h4>Left Top Prompt</h4>
+  <h3>Left Top Prompt</h3>
   <ul style="margin-top:-15px">
     <li>
       <b>Segment indicating OS System</b>
@@ -15,7 +15,7 @@
     </li>
       &nbsp&nbsp<img  height="30px" src="screenshots/vscode_demo.png">
   </ul>
-  <h4>Left Bottom Prompt</h4>
+  <h3>Left Bottom Prompt</h3>
   <ul style="margin-top:-15px">
      <li>
       <b>Dynamic path display</b>
@@ -26,7 +26,7 @@
      </li>
       &nbsp&nbsp<img  height="25px" src="screenshots/git_demo.png">
   </ul>
-  <h4>Right Top Prompt</h4>
+  <h3>Right Top Prompt</h3>
   <ul style="margin-top:-15px">
     <li>
       <b>Minimal exit status</b>
@@ -49,7 +49,7 @@
      </li>
       &nbsp&nbsp<img  height="25px" src="screenshots/battery_demo.png">
   </ul>
-  <h4>Right Bottom Prompt</h4>
+  <h3>Right Bottom Prompt</h3>
   <ul style="margin-top:-15px">
      <li>
       <b>Glyphs indicating relevant dev files in current working directory</b>
