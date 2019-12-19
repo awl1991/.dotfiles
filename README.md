@@ -62,7 +62,7 @@
         <li>
           Currently recognized files
           <ul>
-            zshrc | tmux | vim | dockerfile | node modules | react native (expo) | dylib <br> markdown | C | dart | db | html | java | javascript | json | haskell | sql | php <br> python | ruby | rust | sass | swift | typescript | text | less | require js | sqlite
+            zshrc · tmux · vim · dockerfile · node modules · react native (expo) · dylib <br> markdown · C · dart · db · html · java · javascript · json · haskell · sql · php <br> python · ruby · rust · sass · swift · typescript · text · less · require js · sqlite
           </ul>
       </li>
      </ul>
