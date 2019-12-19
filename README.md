@@ -1,7 +1,7 @@
-<h1 align="center">
+<h1>
   Ultimate ZSH Prompt
 </h1>
-<p align="center">
+<p>
  <img width="600px" src="screenshots/promptdemo.png">
 </p>
   <h4>Left Top Prompt</h4>
