@@ -1,5 +1,5 @@
-<h1>
-  <img  height="25px" src="screenshots/logo.png"> &nbsp Lux Prompt
+<h1 align="center">
+  <img  height="50px" src="screenshots/logo.png"><br>Lux Prompt
 </h1>
 <p>
  <img width="100%" src="screenshots/promptdemo.png">
