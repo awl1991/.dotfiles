@@ -19,7 +19,7 @@ prompt_zsh_battery_level() {
   then symbol='􀛪 ' ; color='%F{red}'
     # == 10%
   elif [ $percentage -gt 19 ] && [ $percentage -le 30 ]
-  then symbol="􀛩 " ; color='%F{red}'
+  then symbol="􀛩 " ; color='%F{yellow}'
     # == 20%
   elif [ $percentage -gt 29 ] && [ $percentage -le 40 ]
   then symbol="􀛩 " ; color='%F{yellow}'

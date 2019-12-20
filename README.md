@@ -18,7 +18,7 @@
   <h3>Left Bottom Prompt</h3>
   <ul>
      <li>
-      Dynamic path display
+      Path display
      </li>
       &nbsp&nbsp<img  height="30px" src="screenshots/path_demo.png">
      <li>
