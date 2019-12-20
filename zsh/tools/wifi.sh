@@ -23,7 +23,7 @@ zsh_wifi_signal(){
           local tcolor=''
 
           [[ $ssid ]] && icon='\uf424  '
-          [[ $channel = '6' || $channel = '1' ]]  && icon='\uf838'
+          [[ $channel = '6' || $channel = '1' ]]  && icon='\uf838 '
           [[ $ssid = '==> AWL Home <==' ]]      && icon=''
           [[ $ssid = '==> AWL Home <==' ]]      && ssid='  '
           [[ $signal -gt -60 ]] && color='%F{2}'  && tcolor='%F{2}'
