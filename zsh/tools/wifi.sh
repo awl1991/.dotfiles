@@ -7,7 +7,7 @@ zsh_wifi_signal(){
 
   if [ "$airport" = "Off" ]; then
           # setting if wifi is off
-          local officon='\uf057'
+          local officon=' \uf057 '
           local   color='%F{239}'
           echo "%{$color%}$officon"
   else
