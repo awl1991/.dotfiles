@@ -254,4 +254,7 @@
         "prettier.useEditorConfig": false,
         "editor.formatOnSave": true,
         "prettier.useTabs": true,
+        "[scss]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
     }
