@@ -257,4 +257,8 @@
         "[scss]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
+        "browser-preview.startUrl": "http://localhost:8000/",
+        "[svg]": {
+            "editor.defaultFormatter": "jock.svg"
+        },
     }
