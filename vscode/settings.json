@@ -261,4 +261,6 @@
         "[svg]": {
             "editor.defaultFormatter": "jock.svg"
         },
+        "svg.preview.backgroundCustom": "#383C44",
+        "svg.preview.autoShow": true,
     }

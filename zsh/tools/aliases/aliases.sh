@@ -22,10 +22,10 @@ alias        codecap="code ~/Desktop/Capital\ Consultants/capital-consultants"
 local         cap_id='{ "site_id": "181d8830-fd2f-445e-bec0-5624a39e3ce7"}'
 alias     	 capdata="netlify api getSite --data '$cap_id' | jq '.'"
 alias     rmfontfile="rm -rf ~/.dotfiles/fonts/*"
-alias  rebuildfinder="sudo mdutil -i on /"
+alias  reindex-finder="sudo mdutil -i on /"
 alias 		    gitc="git clone"
 alias 		    gits="git status"
 alias 	      gitall="git add -A; git commit -m 'commit all'; git push -u origin master"
 alias		    gitp="git push -u origin master"
-alias         python=python2
+# alias         python=python2
 gitcmt() { echo "$(git commit -m ${1})" }

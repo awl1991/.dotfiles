@@ -41,47 +41,47 @@ autoload -U compinit && compinit
 
 # --> Zsh plugins
 plugins=(
- osx
- zsh-nvm
- cd-reminder
- zsh_reload
- macos
- copyfile
- zsh-completions
- zsh-safe-rm
- zsh-syntax-highlighting
- zsh-history-substring-search
- zsh-autosuggestions
- jsontools
- web-search
- screen
- colorize
- iterm2
- almostontop
- nice-exit-code
- z
- k
+	osx
+	zsh-nvm
+	cd-reminder
+	zsh_reload
+	macos
+	copyfile
+	zsh-completions
+	zsh-safe-rm
+	zsh-syntax-highlighting
+	zsh-history-substring-search
+	zsh-autosuggestions
+	jsontools
+	web-search
+	screen
+	colorize
+	iterm2
+	almostontop
+	nice-exit-code
+	z
+	k
 )
 
 # <==*=<< Left Prompt <==*=<<
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
- os_icon
- custom_vscode
- context
- newline
- dir
- vcs
+	os_icon
+	custom_vscode
+	context
+	newline
+	dir
+	vcs
 )
 
 # >>=*=> Right Prompt >>=*=>
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
- status
- custom_wifi_signal
- time
- custom_prompt_space
- custom_battery_status
- newline
- custom_prompt_language
+	status
+	custom_wifi_signal
+	time
+	custom_prompt_space
+	custom_battery_status
+	newline
+	custom_prompt_language
 )
 
 # --> Custom Git Status config
