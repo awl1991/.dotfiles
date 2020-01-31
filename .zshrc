@@ -2,7 +2,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-# ==> ==> ==> ZSH Theme <== <== <== #
+#   ==> ==> ==> ZSH Theme <== <== <==   #
 ZSH_THEME=powerlevel10k/powerlevel10k
 
 # ==> ==> Font Pack <== <
@@ -17,21 +17,17 @@ local p="$(date '+%p')"
 p=$(echo "$p" | sed -e 's/AM/ᴀᴍ/' -e 's/PM/ᴘᴍ/')
 local time_format="$(date '+%-I:%M')"
 
-# Zsh-autosuggestions config
-ZSH_AUTOSUGGEST_USE_ASYNC=true
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-
-# --> Terminal Defaults
-TERM=xterm-256color
-POWERLEVEL9K_IGNORE_TERM_LANG=false
-DEFAULT_USER=$USER
-
 # --> Path shortcuts
+	# > .oh_my_zsh directory
 ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-MY_ZSH="$HOME/.dotfiles/zsh"
-MY_ZSH_TOOLS="$MY_ZSH/tools"
-ALIASES="$MY_ZSH_TOOLS/aliases"
+	# > .dotfiles directory
+DOT="$HOME/.dotfiles/zsh"
+DOT_TOOLS="$DOT/tools"
+	# > .zcompdump directory
+ZCOMPDUMP="$HOME/.ZCDump"
+	# > alias directory
+ALIASES="$DOT_TOOLS/aliases"
 
 # --> Completions path
 fpath=($HOME/zsh-completions/src $fpath)
@@ -39,13 +35,35 @@ fpath=($HOME/zsh-completions/src $fpath)
 # --> Initialize completions
 autoload -U compinit && compinit
 
+# ZSH config
+setopt   INC_APPEND_HISTORY EXTENDED_HISTORY HIST_IGNORE_DUPS HIST_FIND_NO_DUPS
+setopt	 HIST_EXPIRE_DUPS_FIRST
+setopt   HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zhistory
+DIRSTACKSIZE=20
+# This is needed for the prefix completer
+setopt COMPLETE_IN_WORD
+# don't move the cursor to the end AFTER a completion was inserted
+setopt NO_ALWAYS_TO_END
+
+# Zsh-autosuggestions config
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+# --> Terminal Defaults
+TERM=xterm-256color
+DEFAULT_USER=$USER
+
+# --> .zcompdump config
+if [ -z "$ZSH_COMPDUMP" ]; then
+	ZSH_COMPDUMP="$ZCOMPDUMP/.zcdump_zsh_v${ZSH_VERSION}"
+fi
+
 # --> Zsh plugins
 plugins=(
-	osx
-	zsh-nvm
-	cd-reminder
 	zsh_reload
-	macos
 	copyfile
 	zsh-completions
 	zsh-safe-rm
@@ -53,7 +71,6 @@ plugins=(
 	zsh-history-substring-search
 	zsh-autosuggestions
 	jsontools
-	web-search
 	screen
 	colorize
 	iterm2
@@ -66,7 +83,8 @@ plugins=(
 # <==*=<< Left Prompt <==*=<<
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 	os_icon
-	custom_vscode
+#   ~~> ~~> VSCode <~~ <~~
+#	custom_vscode
 	context
 	newline
 	dir
@@ -85,7 +103,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 )
 
 # --> Custom Git Status config
-source $MY_ZSH_TOOLS/git-prompt.sh
+source $DOT_TOOLS/git-prompt.sh
 typeset -g POWERLEVEL9K_VCS_DISABLE_GITSTATUS_FORMATTING=true
 typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='${$((my_git_formatter(1)))+${my_git_format}}'
 typeset -g POWERLEVEL9K_VCS_LOADING_CONTENT_EXPANSION='${$((my_git_formatter(0)))+${my_git_format}}'
@@ -210,33 +228,45 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23,bg=grey"
 #────────────────────────────────────╮
 #  ==> ==> FUNCTION SEGMENTS <== <==
 #───────────────────────────────────╯
-source ~/.bash_profile
 # --> Custom WiFi function
-source $MY_ZSH_TOOLS/wifi.sh
+source $DOT_TOOLS/wifi.sh
+
 # --> Custom battery function
-source $MY_ZSH_TOOLS/battery.sh
+source $DOT_TOOLS/battery.sh
+
 # --> Display available disk space
-source $MY_ZSH_TOOLS/disk_space.sh
+source $DOT_TOOLS/disk_space.sh
+
 # --> Contextual icons
-source $MY_ZSH_TOOLS/context_files.sh
-# --> Vscode windows open
-source $MY_ZSH_TOOLS/vscode.sh
+source $DOT_TOOLS/context_files.sh
+
+# --> Vscode windows open  ~~> ~~> VSCode <~~ <~~
+# source $DOT_TOOLS/vscode.sh
 
 #───────────────────────────────────╮
 #  ==> ==> USEFUL COMMANDS <== <==
 #──────────────────────────────────╯
 # --> Output $PWD
-source $MY_ZSH_TOOLS/echo_path.sh
+source $DOT_TOOLS/echo_path.sh
+
 # --> Extra line after command
-source $MY_ZSH_TOOLS/newline.sh
+source $DOT_TOOLS/newline.sh
+
 # --> Show color palette
-source $MY_ZSH_TOOLS/showcolors.sh
+source $DOT_TOOLS/showcolors.sh
+
 # --> Fix permission for directory
-source $MY_ZSH_TOOLS/permission.sh
+source $DOT_TOOLS/permission.sh
+
 # --> Create custom glyph palette
-source $MY_ZSH_TOOLS/font_forge.sh
-# --> colorls shortcuts
-source $MY_ZSH_TOOLS/colorls_shortcuts.sh
+source $DOT_TOOLS/font_forge.sh
+
+# --> Colorls shortcuts
+source $DOT_TOOLS/colorls_shortcuts.sh
+
+# --> Tab title
+source $DOT_TOOLS/tab_title.sh
+
 # --> colorls tab completion
 source $(dirname $(gem which colorls))/tab_complete.sh
 
@@ -248,20 +278,23 @@ source $ALIASES/aliases.sh
 #───────────────────────────────────────╮
 # ==> ==> NEEDED AT END OF FILE <== <==
 #──────────────────────────────────────╯
-# --> P10K
-source ~/powerlevel10k powerlevel10k
 # --> Oh My Zsh
 source $ZSH/oh-my-zsh.sh
+
 # --> Iterm2 shell integration
 source ~/.iterm2_shell_integration.zsh
+
 # --> Zsh-async
 source $ZSH_CUSTOM/plugins/zsh-async/async.zsh
+
 # --> z
 . $ZSH/plugins/z/z.sh
+
 # --> Iterm shell integration
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
 # --> zsh syntax highlighting
-source /Users/awl/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[default]=015
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
@@ -283,5 +316,6 @@ ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=138
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=138
+
 # --> Fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

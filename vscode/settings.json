@@ -41,8 +41,7 @@
         "files.trimTrailingWhitespace": true,
 
     // --> Misc. VSCode Configs <--
-        "workbench.colorTheme": "Atom One Dark",
-        "search.location": "panel",
+        "workbench.colorTheme": "One Dark Pro",
         "cSpell.language": "en-US",
         "breadcrumbs.enabled": true,
         "search.useIgnoreFiles": false,
