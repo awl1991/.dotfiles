@@ -62,7 +62,7 @@ if [ -z "$ZSH_COMPDUMP" ]; then
 fi
 
 # --> Zsh plugins
-plugins=(
+plugins+=(
 	zsh_reload
 	copyfile
 	zsh-completions
@@ -77,6 +77,7 @@ plugins=(
 	almostontop
 	nice-exit-code
 	z
+	# k -> Readable directory listings
 	k
 )
 

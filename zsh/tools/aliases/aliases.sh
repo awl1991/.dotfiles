@@ -28,5 +28,6 @@ alias 		    gits="git status"
 alias 	      gitall="git add -A; git commit -m 'commit all'; git push -u origin master"
 alias		    gitp="git push -u origin master"
 alias 	   tabcolors="code /Applications/iTerm.app/Contents/Resources/graphic_colors.json"
+alias			   dirs="k -a -h"
 # alias         python=python2
 gitcmt() { echo "$(git commit -m ${1})" }
