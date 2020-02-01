@@ -54,10 +54,6 @@ setopt COMPLETE_IN_WORD
 # don't move cursor to end AFTER inserted completion
 setopt NO_ALWAYS_TO_END
 
-# Zsh-autosuggestions config
-ZSH_AUTOSUGGEST_USE_ASYNC=true
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-
 # --> Terminal Defaults
 TERM=xterm-256color
 DEFAULT_USER=$USER
@@ -67,23 +63,29 @@ if [ -z "$ZSH_COMPDUMP" ]; then
 	ZSH_COMPDUMP="$ZCOMPDUMP/.zcdump_$[${RANDOM}%1000]"
 fi
 
-# --> Zsh plugins
-plugins+=(
-	zsh_reload
-	copyfile
-	zsh-completions
-	zsh-safe-rm
-	zsh-syntax-highlighting
-	zsh-history-substring-search
-	zsh-autosuggestions
-	jsontools
-	screen
-	colorize
-	iterm2
-	almostontop
-	nice-exit-code
-	z
-)
+# ===> ZPLUG <===
+source ~/.zplug/init.zsh
+unset ZPLUG_CACHE_CHECK_FOR_CHANGES
+
+	# => plugins
+	zplug "~/.dotfiles/zsh/tools/aliases", from:local
+	zplug "romkatv/powerlevel10k", as:theme, depth:1
+	zplug "zsh-users/zsh-completions", from:github
+	zplug "mattmc3/zsh-safe-rm", from:github
+	zplug "Valiev/almostontop", from:github
+	zplug "zsh-users/zsh-autosuggestions", from:github
+	zplug "bric3/nice-exit-code", from:github
+	zplug "zsh-users/zsh-history-substring-search", from:github
+	zplug "plugins/colorize", from:oh-my-zsh
+	zplug "plugins/jsontools", from:oh-my-zsh
+	zplug "mafredri/zsh-async", from:github, use:"async.zsh"
+	zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+zplug load
+
+# Zsh-autosuggestions config
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # <==*=<< Left Prompt <==*=<<
 typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
@@ -250,9 +252,6 @@ source $DOT_TOOLS/context_files.sh
 # --> Output $PWD
 source $DOT_TOOLS/echo_path.sh
 
-# --> Extra line after command
-source $DOT_TOOLS/newline.sh
-
 # --> Show color palette
 source $DOT_TOOLS/showcolors.sh
 
@@ -268,7 +267,7 @@ source $DOT_TOOLS/colorls_shortcuts.sh
 # --> Tab title
 source $DOT_TOOLS/tab_title.sh
 
-# -> K eadable directory listings
+# -> K readable directory listings
 source $DOT_TOOLS/k.sh
 
 # --> colorls tab completion
@@ -277,7 +276,7 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 #═════════════════════════╗
 # ==> ==> ALIASES <== <==
 #════════════════════════╝
-source $ALIASES/aliases.sh
+# source $ALIASES/aliases.sh
 
 #───────────────────────────────────────╮
 # ==> ==> NEEDED AT END OF FILE <== <==
@@ -291,18 +290,15 @@ source ~/.iterm2_shell_integration.zsh
 # --> Zsh-async
 source $ZSH_CUSTOM/plugins/zsh-async/async.zsh
 
-# --> z
-. $ZSH/plugins/z/z.sh
-
 # --> Iterm shell integration
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 # --> zsh syntax highlighting
-source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+typeset -gA ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[default]=015
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
-ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=006
 ZSH_HIGHLIGHT_STYLES[alias]=fg=029
 ZSH_HIGHLIGHT_STYLES[builtin]=fg=028
 ZSH_HIGHLIGHT_STYLES[function]=fg=027
@@ -322,4 +318,5 @@ ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=138
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=138
 
 # --> Fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export BAT_CONFIG_PATH=" ~/.dotfiles/zsh/bat.conf"
+export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always {} | head -500" --height 90% --layout=reverse'
