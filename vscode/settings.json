@@ -262,4 +262,6 @@
         },
         "svg.preview.backgroundCustom": "#383C44",
         "svg.preview.autoShow": true,
+        "vs-color-picker.autoLaunchDelay": 50,
+        "color-pick.analytics": true,
     }

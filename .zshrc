@@ -12,10 +12,16 @@ POWERLEVEL9K_MODE='nerd-font'
 ENABLE_CORRECTION=true
 DISABLE_AUTO_TITLE=true
 zle_highlight+=(paste:none)
-export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_AUTO_UPDATE=3
 local p="$(date '+%p')"
 p=$(echo "$p" | sed -e 's/AM/ᴀᴍ/' -e 's/PM/ᴘᴍ/')
 local time_format="$(date '+%-I:%M')"
+local string="$PWD"
+
+# ===> Truncation
+POWERLEVEL9K_SHORTEN_DELIMITER="%F{023} %f"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_first_and_last
 
 # --> Path shortcuts
 	# > .oh_my_zsh directory
@@ -43,9 +49,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zhistory
 DIRSTACKSIZE=20
-# This is needed for the prefix completer
+# prefix completer
 setopt COMPLETE_IN_WORD
-# don't move the cursor to the end AFTER a completion was inserted
+# don't move cursor to end AFTER inserted completion
 setopt NO_ALWAYS_TO_END
 
 # Zsh-autosuggestions config
@@ -58,7 +64,7 @@ DEFAULT_USER=$USER
 
 # --> .zcompdump config
 if [ -z "$ZSH_COMPDUMP" ]; then
-	ZSH_COMPDUMP="$ZCOMPDUMP/.zcdump_zsh_v${ZSH_VERSION}"
+	ZSH_COMPDUMP="$ZCOMPDUMP/.zcdump_$[${RANDOM}%1000]"
 fi
 
 # --> Zsh plugins
@@ -77,12 +83,10 @@ plugins+=(
 	almostontop
 	nice-exit-code
 	z
-	# k -> Readable directory listings
-	k
 )
 
 # <==*=<< Left Prompt <==*=<<
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 	os_icon
 #   ~~> ~~> VSCode <~~ <~~
 #	custom_vscode
@@ -93,7 +97,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 )
 
 # >>=*=> Right Prompt >>=*=>
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 	status
 	custom_wifi_signal
 	time
@@ -115,10 +119,6 @@ typeset -g POWERLEVEL9K_VCS_BACKENDS=(git)
 # --> Transient prompt config
 typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
 typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='%F{02} %f'
-
-# --> Path display
-POWERLEVEL9K_SHORTEN_DIR_LENGTH='3'
-POWERLEVEL9K_SHORTEN_STRATEGY=none
 
 # --> Show lock if directory is !writable
 POWERLEVEL9K_DIR_SHOW_WRITABLE="true"
@@ -150,7 +150,7 @@ POWERLEVEL9K_OS_ICON_BACKGROUND='000'
 POWERLEVEL9K_CUSTOM_VSCODE_BACKGROUND="016"
 POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='240'
 POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='236'
-POWERLEVEL9K_VCS_BACKGROUND="016"
+POWERLEVEL9K_VCS_BACKGROUND="232"
 
 # --> Left Newline Icons
 POWERLEVEL9K_HOME_FOLDER_ABBREVIATION='%F{0}~'
@@ -158,7 +158,7 @@ POWERLEVEL9K_HOME_ICON="%K{23} "
 POWERLEVEL9K_HOME_SUB_ICON='%F{023}\ue32c '
 POWERLEVEL9K_FOLDER_ICON=' \ue32c '
 POWERLEVEL9K_ETC_ICON='  '
-POWERLEVEL9K_DIR_PATH_SEPARATOR=""
+POWERLEVEL9K_DIR_PATH_SEPARATOR="/"
 
 # --> Left Newline Backgrounds
 POWERLEVEL9K_DIR_HOME_BACKGROUND='23'
@@ -267,6 +267,9 @@ source $DOT_TOOLS/colorls_shortcuts.sh
 
 # --> Tab title
 source $DOT_TOOLS/tab_title.sh
+
+# -> K eadable directory listings
+source $DOT_TOOLS/k.sh
 
 # --> colorls tab completion
 source $(dirname $(gem which colorls))/tab_complete.sh
