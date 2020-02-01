@@ -3,7 +3,6 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 #   ==> ==> ==> ZSH Theme <== <== <==   #
-ZSH_THEME=powerlevel10k/powerlevel10k
 
 # ==> ==> Font Pack <== <
 POWERLEVEL9K_MODE='nerd-font'
@@ -241,7 +240,7 @@ source $DOT_TOOLS/battery.sh
 source $DOT_TOOLS/disk_space.sh
 
 # --> Contextual icons
-source $DOT_TOOLS/context_files.sh
+source $DOT_TOOLS/context_files.plugin.zsh
 
 # --> Vscode windows open  ~~> ~~> VSCode <~~ <~~
 # source $DOT_TOOLS/vscode.sh
@@ -272,11 +271,6 @@ source $DOT_TOOLS/k.sh
 
 # --> colorls tab completion
 source $(dirname $(gem which colorls))/tab_complete.sh
-
-#═════════════════════════╗
-# ==> ==> ALIASES <== <==
-#════════════════════════╝
-# source $ALIASES/aliases.sh
 
 #───────────────────────────────────────╮
 # ==> ==> NEEDED AT END OF FILE <== <==
