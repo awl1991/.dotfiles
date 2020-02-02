@@ -1,0 +1,37 @@
+Speed up OS X Terminal commands
+
+	􀀺.  Disable window open/close animations:
+		􀄫	defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+	􀀼.  Accelerated playback window size (Cocoa apps):
+		􀄫	defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+
+	􀀾. Disable open info window animation ⌘ + i:
+		􀄫 defaults write com.apple.finder DisableAllAnimations -bool true
+
+	􀁀. Disable dock application animations:
+		􀄫	defaults write com.apple.dock launchanim -bool false
+
+	􀁂. Faster Mission Control animations:
+		􀄫	defaults write com.apple.dock expose-animation-duration -float 0.1
+
+	􀁄. Disable Dock animation delay:
+		􀄫	defaults write com.apple.Dock autohide-delay -float 0
+
+	􀁆. Disable Quick Look animations:
+		􀄫	defaults write -g QLPanelAnimationDuration -float 0
+
+	􀁈. Disable email reply animation:
+		⒈ 􀄫  defaults write com.apple.mail DisableReplyAnimations -bool true
+		⒉ 􀄫  defaults write com.apple.mail DisableSendAnimations -bool true
+
+	􀁊. Disable Web page render delay:
+		􀄫	defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25
+
+	􀓵. Faster keystrokes:
+		􀄫	defaults write NSGlobalDomain KeyRepeat -int 0
+
+	􀅴 Undo:
+		􀄫 defaults delete domain key
+			 i.e.  #10:
+			􀄫 defaults delete NSGlobalDomain KeyRepeat

@@ -1,11 +1,12 @@
 local fira='/Users/awl/nerd-fonts/src/unpatched-fonts/FiraCode-Retina.ttf'
+local sfmono='/Users/awl/nerd-fonts/src/unpatched-fonts/FiraCode-Retina.ttf'
 local dotfont='/Users/awl/.dotfiles/fonts/'
 
 forge_font() {
 	$(rmfontfile)
 	$(echo fontforge -script '/Users/awl/nerd-fonts/font-patcher' -c $fira -out $dotfont)
 	$(echo open $dotfont)
-	$(rm '/Library/Fonts/Fira Code Retina Nerd Font Complete.ttf')
+	$(rm '/Library/Fonts/SF-Mono-Light.otf')
 }
 
 move_icons() {
