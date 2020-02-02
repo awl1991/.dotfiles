@@ -131,7 +131,6 @@
             "markdown",
             "perl",
             "php",
-            "plaintext",
             "powershell",
             "pug",
             "python",
@@ -189,7 +188,8 @@
         "eslint.quiet": true,
         "liveServer.settings.CustomBrowser": "chrome",
         "files.associations": {
-            "*.php": "php"
+            "*.php": "php",
+            "*.txt": "ignore"
         },
 
     // -- Material Icon theme

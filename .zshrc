@@ -8,19 +8,20 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 POWERLEVEL9K_MODE='nerd-font'
 
 # --> Globals
-ENABLE_CORRECTION=true
-DISABLE_AUTO_TITLE=true
+setopt auto_cd
+ENABLE_CORRECTION="true"
+DISABLE_AUTO_TITLE="true"
+COMPLETION_WAITING_DOTS="true"
 zle_highlight+=(paste:none)
 export HOMEBREW_NO_AUTO_UPDATE=3
 local p="$(date '+%p')"
 p=$(echo "$p" | sed -e 's/AM/ᴀᴍ/' -e 's/PM/ᴘᴍ/')
 local time_format="$(date '+%-I:%M')"
-local string="$PWD"
 
 # ===> Truncation
-POWERLEVEL9K_SHORTEN_DELIMITER="%F{023} %f"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_first_and_last
+# POWERLEVEL9K_SHORTEN_DELIMITER="%F{023} %f"
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+# POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_first_and_last
 
 # --> Path shortcuts
 	# > .oh_my_zsh directory
@@ -63,28 +64,37 @@ if [ -z "$ZSH_COMPDUMP" ]; then
 fi
 
 # ===> ZPLUG <===
-source ~/.zplug/init.zsh
 unset ZPLUG_CACHE_CHECK_FOR_CHANGES
+source ~/.zplug/init.zsh
 
 	# => plugins
+	zplug "bhilburn/powerlevel9k", from:github
 	zplug "~/.dotfiles/zsh/tools/aliases", from:local
 	zplug "romkatv/powerlevel10k", as:theme, depth:1
+	zplug "plugins/colorize", from:oh-my-zsh
+	zplug "plugins/jsontools", from:oh-my-zsh
+	zplug "plugins/z", from:oh-my-zsh, use:"z.sh"
 	zplug "zsh-users/zsh-completions", from:github
 	zplug "mattmc3/zsh-safe-rm", from:github
 	zplug "Valiev/almostontop", from:github
 	zplug "zsh-users/zsh-autosuggestions", from:github
-	zplug "bric3/nice-exit-code", from:github
 	zplug "zsh-users/zsh-history-substring-search", from:github
-	zplug "plugins/colorize", from:oh-my-zsh
-	zplug "plugins/jsontools", from:oh-my-zsh
+	zplug "bric3/nice-exit-code", from:github
 	zplug "mafredri/zsh-async", from:github, use:"async.zsh"
-	zplug "zsh-users/zsh-syntax-highlighting", defer:2
+	zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:2
 
 zplug load
 
 # Zsh-autosuggestions config
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+# --> Transient prompt config
+typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
+# Green prompt symbol if the last command succeeded.
+typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=2
+# Red prompt symbol if the last command failed.
+typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=3
 
 # <==*=<< Left Prompt <==*=<<
 typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
@@ -93,7 +103,7 @@ typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 #	custom_vscode
 	context
 	newline
-	dir
+	custom_dir
 	vcs
 )
 
@@ -117,10 +127,6 @@ typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,
 typeset -g POWERLEVEL9K_VCS_LOADING_VISUAL_IDENTIFIER_COLOR=244
 typeset -g POWERLEVEL9K_VCS_BACKENDS=(git)
 
-# --> Transient prompt config
-typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
-typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='%F{02} %f'
-
 # --> Show lock if directory is !writable
 POWERLEVEL9K_DIR_SHOW_WRITABLE="true"
 POWERLEVEL9K_DIR_LOCK_ICON=""
@@ -133,13 +139,13 @@ POWERLEVEL9K_ROOT_ICON=''
 POWERLEVEL9K_USER_ROOT_BACKGROUND="52"
 
 # --> Remove Left Segment Default Whitespace
-POWERLEVEL9K_WHITESPACE_BETWEEN_LEFT_SEGMENTS=' '
+POWERLEVEL9K_WHITESPACE_BETWEEN_LEFT_SEGMENTS=''
 POWERLEVEL9K_WHITESPACE_BETWEEN_RIGHT_SEGMENTS=''
 
 # --> Left Icons
-POWERLEVEL9K_APPLE_ICON=' %F{07} %f'
+POWERLEVEL9K_APPLE_ICON='  %F{07}  %F{000}%K{232}%f'
 POWERLEVEL9K_CONTEXT_TEMPLATE="\uf823"
-typeset -g POWERLEVEL9K_CUSTOM_VSCODE="vscode"
+POWERLEVEL9K_CUSTOM_VSCODE="vscode"
 
 # --> Left Foregrounds
 POWERLEVEL9K_OS_ICON_FOREGROUND='242'
@@ -154,22 +160,12 @@ POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='236'
 POWERLEVEL9K_VCS_BACKGROUND="232"
 
 # --> Left Newline Icons
-POWERLEVEL9K_HOME_FOLDER_ABBREVIATION='%F{0}~'
-POWERLEVEL9K_HOME_ICON="%K{23} "
-POWERLEVEL9K_HOME_SUB_ICON='%F{023}\ue32c '
-POWERLEVEL9K_FOLDER_ICON=' \ue32c '
-POWERLEVEL9K_ETC_ICON='  '
+POWERLEVEL9K_CUSTOM_DIR="dir_icon"
 POWERLEVEL9K_DIR_PATH_SEPARATOR="/"
 
 # --> Left Newline Backgrounds
 POWERLEVEL9K_DIR_HOME_BACKGROUND='23'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='30'
-
-# Left Newline Foregrounds
-POWERLEVEL9K_DIR_HOME_FOREGROUND='0'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='22'
-POWERLEVEL9K_DIR_PATH_SEPARATOR_FOREGROUND="234"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="23"
 
 # --> Right Prompt Icons
 POWERLEVEL9K_STATUS_OK_ICON="  "
@@ -199,11 +195,11 @@ POWERLEVEL9K_STATUS_BACKGROUND=''
 POWERLEVEL9K_CUSTOM_PROMPT_SPACE_BACKGROUND=''
 
 # --> Right Prompt Foregrounds
-POWERLEVEL9K_STATUS_OK_FOREGROUND='022'
-POWERLEVEL9K_STATUS_FAIL_FOREGROUND="001"
+typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND='022'
+typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND="001"
 POWERLEVEL9K_TIME_FOREGROUND='109'
 POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND="016"
-POWERLEVEL9K_CUSTOM_PROMPT_SPACE_FOREGROUND='white'
+POWERLEVEL9K_CUSTOM_PROMPT_SPACE_FOREGROUND=''
 POWERLEVEL9K_DIR_PATH_HIGHLIGHT_BOLD=false
 
 # --> Prompt Prefixes
@@ -217,8 +213,9 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 
 # -->  Segment Separators
-typeset -g POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
+typeset -g POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
 typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
+typeset POWERLEVEL9K_LEFT_PROMPT_SEGMENT_END_SYMBOL=''
 
 # --> Subsegment Separators
 typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=''
@@ -228,64 +225,18 @@ typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='%F{250}%f'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23,bg=grey"
 
 #────────────────────────────────────╮
-#  ==> ==> FUNCTION SEGMENTS <== <==
+#  ==> ==>  SOURCE CUSTOMS  <== <==
 #───────────────────────────────────╯
-# --> Custom WiFi function
-source $DOT_TOOLS/wifi.sh
+for item in $(ls -1 ${DOT_TOOLS}/*.sh); do
+	[ -e "${item}" ] && source "${item}"
+done
 
-# --> Custom battery function
-source $DOT_TOOLS/battery.sh
-
-# --> Display available disk space
-source $DOT_TOOLS/disk_space.sh
-
-# --> Contextual icons
-source $DOT_TOOLS/context_files.plugin.zsh
-
-# --> Vscode windows open  ~~> ~~> VSCode <~~ <~~
-# source $DOT_TOOLS/vscode.sh
-
-#───────────────────────────────────╮
-#  ==> ==> USEFUL COMMANDS <== <==
-#──────────────────────────────────╯
-# --> Output $PWD
-source $DOT_TOOLS/echo_path.sh
-
-# --> Show color palette
-source $DOT_TOOLS/showcolors.sh
-
-# --> Fix permission for directory
-source $DOT_TOOLS/permission.sh
-
-# --> Create custom glyph palette
-source $DOT_TOOLS/font_forge.sh
-
-# --> Colorls shortcuts
-source $DOT_TOOLS/colorls_shortcuts.sh
-
-# --> Tab title
-source $DOT_TOOLS/tab_title.sh
-
-# -> K readable directory listings
-source $DOT_TOOLS/k.sh
-
-# --> colorls tab completion
-source $(dirname $(gem which colorls))/tab_complete.sh
 
 #───────────────────────────────────────╮
 # ==> ==> NEEDED AT END OF FILE <== <==
 #──────────────────────────────────────╯
-# --> Oh My Zsh
-source $ZSH/oh-my-zsh.sh
-
 # --> Iterm2 shell integration
 source ~/.iterm2_shell_integration.zsh
-
-# --> Zsh-async
-source $ZSH_CUSTOM/plugins/zsh-async/async.zsh
-
-# --> Iterm shell integration
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 # --> zsh syntax highlighting
 typeset -gA ZSH_HIGHLIGHT_STYLES
