@@ -16,5 +16,6 @@ source ~/.zplug/init.zsh
 	zplug "bric3/nice-exit-code", from:github
 	zplug "mafredri/zsh-async", from:github, use:"async.zsh"
 	zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:2
+	zplug "Tarrasch/zsh-autoenv", from:github
 
 zplug load
