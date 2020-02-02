@@ -60,10 +60,26 @@ dir_icon() {
      ;;
     *)
   esac
+
+  if [[ $(echo "$PWD" | tr '[:upper:]' '[:lower:]') == *'capital consultants'* ]]; then
+    icon=" "
+    bg="%K{30}"
+    fg="%F{30}"
+  fi
+
+  if [[ $(echo "$PWD" | tr '[:upper:]' '[:lower:]') == *'peril'* ]]; then
+    icon=" "
+    bg="%K{06}"
+    fg="%F{06}"
+  fi
+
+  if [[ $(echo "$PWD" | tr '[:upper:]' '[:lower:]') == *'caches'* ||  \
+        $(echo "$PWD" | tr '[:upper:]' '[:lower:]') == *'.cache'*  \
+     ]]; then
+    icon="􀋨 "
+    bg="%K{101}"
+    fg="%F{101}"
+  fi
+
   echo "$bg $icon %~ $fg%K{232}"
 }
-
-
- # '')
-    #   icon=""
-    # ;;

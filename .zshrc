@@ -69,7 +69,7 @@ source ~/.zplug/init.zsh
 
 	# => plugins
 	zplug "bhilburn/powerlevel9k", from:github
-	zplug "~/.dotfiles/zsh/tools/aliases", from:local
+	zplug "$DOT_TOOLS/aliases", from:local
 	zplug "romkatv/powerlevel10k", as:theme, depth:1
 	zplug "plugins/colorize", from:oh-my-zsh
 	zplug "plugins/jsontools", from:oh-my-zsh
