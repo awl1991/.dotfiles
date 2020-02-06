@@ -116,6 +116,7 @@
         "markdown",
         "perl",
         "php",
+        "plaintext",
         "powershell",
         "pug",
         "python",
@@ -213,4 +214,7 @@
     },
     "color-pick.analytics": true,
     "colorize.colorize_only_visible_beta": true,
+    "[ignore]": {
+        "editor.defaultFormatter": "eetami.whitespace-formatter"
+    },
 }

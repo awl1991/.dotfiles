@@ -13,7 +13,7 @@ function my_git_formatter() {
       local        end='%f'     # ~> default  fg
       local      clean='%021F'  # ~> green    fg
       local   modified='%006F'  # ~> yellow   fg
-      local   untracked='%24F'  # ~> blue     fg
+      local  untracked='%24F'  # ~> blue     fg
       local conflicted='%196F'  # ~> red      fg
       local       grey='%243F'  # ~> grey     fg
       local      green='%028F'  # ~> green    fg

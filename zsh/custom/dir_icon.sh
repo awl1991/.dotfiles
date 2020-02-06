@@ -1,10 +1,4 @@
 # --> Change folder icon based on directory
-
-
-
-
-
-
 dir_icon() {
     local dir="${PWD##*/}"
     local bg=""

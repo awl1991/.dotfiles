@@ -25,14 +25,6 @@ setopt COMPLETE_IN_WORD
 setopt NO_ALWAYS_TO_END
 export HOMEBREW_NO_AUTO_UPDATE=3
 
-# --> Completions path
-fpath=($HOME/zsh-completions/src $fpath)
-
-# --> Initialize completions
-autoload -U compinit && compinit
-precmd_functions+=(omz_termsupport_precmd)
-preexec_functions+=(omz_termsupport_preexec)
-
 # --> Shortcuts
 DOT="$HOME/.dotfiles/zsh"
 CUSTOMS="$HOME/.dotfiles/zsh/custom"
@@ -41,14 +33,17 @@ ZCOMPDUMP="$HOME/.ZCDump"
 ZPLUG="$HOME/.dotfiles/zsh/zplug"
 none=$none
 
+# --> Completions path
+fpath=($HOME/zsh-completions/src $fpath)
+
+# --> Initialize completions
+autoload -U compinit && compinit
+precmd_functions+=(omz_termsupport_precmd)
+preexec_functions+=(omz_termsupport_preexec)
+
 # --> ZPLUG
 unset ZPLUG_CACHE_CHECK_FOR_CHANGES
 source "$ZPLUG/plugins.sh"
-
-# --> SOURCE CUSTOMS
-for item in $(ls -1 ${CUSTOMS}/*.sh); do
-	[ -e "${item}" ] && source "${item}"
-done
 
 # --> Transient Prompt
 typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
@@ -161,7 +156,6 @@ POWERLEVEL9K_STATUS_OK_FOREGROUND='022'
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND="001"
 POWERLEVEL9K_TIME_FOREGROUND='109'
 POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND="016"
-POWERLEVEL9K_CUSTOM_PROMPT_SPACE_FOREGROUND=$none
 POWERLEVEL9K_DIR_PATH_HIGHLIGHT_BOLD="false"
 
 # --> Prompt Prefixes
@@ -206,6 +200,11 @@ ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=138
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=138
+
+# --> SOURCE CUSTOMS
+for item in $(ls -1 ${CUSTOMS}/*.sh); do
+	[ -e "${item}" ] && source "${item}"
+done
 
 # --> .zcompdump config
 if [ -z "$ZSH_COMPDUMP" ]; then
