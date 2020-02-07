@@ -1,10 +1,6 @@
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
 #    ==> Theme - Powerlevel10k on top of Powerlevel9k
 #    ==> Font - Custom Patched Firacode
-
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 # --> Set default User
 DEFAULT_USER=$USER
 
@@ -34,12 +30,10 @@ ZPLUG="$HOME/.dotfiles/zsh/zplug"
 none=$none
 
 # --> Completions path
-fpath=($HOME/zsh-completions/src $fpath)
+fpath=($HOME/.zplug/repos/zsh-users/zsh-completions/src $fpath)
 
 # --> Initialize completions
 autoload -U compinit && compinit
-precmd_functions+=(omz_termsupport_precmd)
-preexec_functions+=(omz_termsupport_preexec)
 
 # --> ZPLUG
 unset ZPLUG_CACHE_CHECK_FOR_CHANGES
@@ -214,3 +208,4 @@ fi
 # --> Fuzzy finder
 export BAT_CONFIG_PATH="$DOT/zsh/bat.conf"
 export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always {} | head -500" --height 90% --layout=reverse'
+export PATH="/usr/local/opt/ruby/bin:$PATH"
