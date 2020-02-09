@@ -117,7 +117,7 @@ prompt_language() {
             icon="$term"
         fi
 
-    echo "$icon"
+    echo "$icon "
 }
 
 
