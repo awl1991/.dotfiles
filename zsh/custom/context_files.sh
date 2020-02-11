@@ -119,7 +119,3 @@ prompt_language() {
 
     echo "$icon"
 }
-
-
-
-    # echo "$icon%F{240}"

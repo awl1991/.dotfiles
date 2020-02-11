@@ -216,5 +216,5 @@
     "colorize.colorize_only_visible_beta": true,
     "[ignore]": {
         "editor.defaultFormatter": "eetami.whitespace-formatter"
-    },
+    }
 }

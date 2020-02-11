@@ -1,13 +1,15 @@
 #    ==> Theme - Powerlevel10k on top of Powerlevel9k
 #    ==> Font - Custom Patched Firacode
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 # --> Set default User
 DEFAULT_USER=$USER
 
 # --> Globals & Zsh
 zle_highlight+=(paste:none)
-ENABLE_CORRECTION="true"
-DISABLE_AUTO_TITLE="true"
+ENABLE_CORRECTION=true
+DISABLE_AUTO_TITLE=true
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zhistory
@@ -19,7 +21,7 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS
 setopt COMPLETE_IN_WORD
 setopt NO_ALWAYS_TO_END
-export HOMEBREW_NO_AUTO_UPDATE=3
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # --> Shortcuts
 DOT="$HOME/.dotfiles/zsh"
@@ -35,9 +37,34 @@ fpath=($HOME/.zplug/repos/zsh-users/zsh-completions/src $fpath)
 # --> Initialize completions
 autoload -U compinit && compinit
 
-# --> ZPLUG
+# --> ZPlug
 unset ZPLUG_CACHE_CHECK_FOR_CHANGES
-source "$ZPLUG/plugins.sh"
+source ~/.zplug/init.zsh
+	zplug "bhilburn/powerlevel9k", from:github
+	zplug "romkatv/powerlevel10k", as:theme, depth:1
+	zplug "plugins/colorize", from:oh-my-zsh
+	zplug "plugins/jsontools", from:oh-my-zsh
+	zplug "plugins/colored-man-pages", from:oh-my-zsh
+	zplug "plugins/z", from:oh-my-zsh, use:"z.sh"
+	zplug "zsh-users/zsh-autosuggestions", from:github
+	zplug "zsh-users/zsh-history-substring-search", from:github
+	zplug "zsh-users/zsh-completions", from:github
+	zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:2
+	zplug "zsh-users/zsh-completions", from:github
+	zplug "mattmc3/zsh-safe-rm", from:github
+	zplug "Valiev/almostontop", from:github
+	zplug "bric3/nice-exit-code", from:github
+	zplug "molovo/revolver", as:command, use:revolver, from:github
+	zplug "mafredri/zsh-async", from:github, use:"async.zsh"
+zplug load
+
+# --> Aliases
+source "${CUSTOMS}/aliases/aliases.sh"
+
+# --> SOURCE CUSTOMS
+for item in $(ls -1 ${CUSTOMS}/*.sh); do
+	[ -e "${item}" ] && source "${item}"
+done
 
 # --> Transient Prompt
 typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
@@ -195,11 +222,6 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=138
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=138
 
-# --> SOURCE CUSTOMS
-for item in $(ls -1 ${CUSTOMS}/*.sh); do
-	[ -e "${item}" ] && source "${item}"
-done
-
 # --> .zcompdump config
 if [ -z "$ZSH_COMPDUMP" ]; then
 	ZSH_COMPDUMP="$ZCOMPDUMP/.zcdump_$[${RANDOM}%1000]"
@@ -208,4 +230,3 @@ fi
 # --> Fuzzy finder
 export BAT_CONFIG_PATH="$DOT/zsh/bat.conf"
 export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always {} | head -500" --height 90% --layout=reverse'
-export PATH="/usr/local/opt/ruby/bin:$PATH"
