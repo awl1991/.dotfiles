@@ -4,10 +4,25 @@
     "window.zoomLevel": 0,
     "telemetry.enableTelemetry": false,
     // --> Customize UI Plugin
-    "customizeUI.font.regular": "Helvetica Nueve",
+    "customizeUI.font.regular": "Avenir Next",
     "customizeUI.font.monospace": "FiraCode Nerd Font",
     "customizeUI.titleBar": "inline",
     // --> VSCode Editor <--
+    "git-graph.showStatusBarItem": true,
+    "activitusbar.views": [
+        {
+            "name": "explorer",
+            "codicon": "folder"
+        },
+        {
+            "name": "extensions",
+            "codicon": "extensions"
+        },
+        {
+            "name": "search",
+            "codicon": "search"
+        }
+    ],
     "editor.fontFamily": "FiraCode Nerd Font",
     "editor.fontLigatures": true,
     "editor.fontSize": 13, // Medium
@@ -35,9 +50,6 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    // --> Misc. VSCode Configs <--
-    "workbench.colorTheme": "One Dark Pro",
-    "cSpell.language": "en-US",
     "breadcrumbs.enabled": true,
     "search.useIgnoreFiles": false,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -48,16 +60,16 @@
     "workbench.editor.tabSizing": "shrink",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.activityBar.visible": true,
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.activityBar.visible": false,
+    "workbench.iconTheme": "vscode-unfancy-file-icons",
     "workbench.statusBar.visible": true,
     "workbench.startupEditor": "newUntitledFile",
     // --> Bracket Colorizer 2 <--
-    "bracket-pair-colorizer-2.showBracketsInGutter": true,
-    "bracket-pair-colorizer-2.rulerPosition": "Full",
-    "bracket-pair-colorizer-2.colorMode": "Independent",
-    "bracket-pair-colorizer-2.showBracketsInRuler": true,
-    "bracket-pair-colorizer-2.highlightActiveScope": true,
+    // "bracket-pair-colorizer-2.showBracketsInGutter": true,
+    // "bracket-pair-colorizer-2.rulerPosition": "Full",
+    // "bracket-pair-colorizer-2.colorMode": "Independent",
+    // "bracket-pair-colorizer-2.showBracketsInRuler": true,
+    // "bracket-pair-colorizer-2.highlightActiveScope": true,
     // --> Path Intellisense <--
     "path-intellisense.extensionOnImport": true,
     // --> Color Highlight <--
@@ -70,78 +82,15 @@
     // ~~> [ Saved Defaults ] <~~
     "javascript.updateImportsOnFileMove.enabled": "always",
     "explorer.confirmDragAndDrop": false,
-    "cSpell.userWords": [
-        "animatable",
-        "home",
-        "init",
-        "keywords",
-        "mobx",
-        "multiline",
-        "native",
-        "nunito",
-        "powerlevel",
-        "rcvpro",
-        "react",
-        "rprompt",
-        "sans",
-        "subfolder",
-        "todohighlight",
-        "vals",
-        "wifi"
-    ],
     "files.eol": "\n",
     "[markdown]": {
         "editor.quickSuggestions": true
     },
     "git.decorations.enabled": false,
-    "cSpell.enabledLanguageIds": [
-        "asciidoc",
-        "c",
-        "coffeescript",
-        "cpp",
-        "csharp",
-        "css",
-        "git-commit",
-        "go",
-        "handlebars",
-        "html",
-        "jade",
-        "java",
-        "javascript",
-        "javascriptreact",
-        "json",
-        "jsonc",
-        "latex",
-        "less",
-        "markdown",
-        "perl",
-        "php",
-        "plaintext",
-        "powershell",
-        "pug",
-        "python",
-        "restructuredtext",
-        "rust",
-        "scala",
-        "scss",
-        "shellscript",
-        "text",
-        "typescript",
-        "typescriptreact",
-        "xml",
-        "yaml",
-        "yml"
-    ],
-    "cSpell.ignoreWords": [
-        "time"
-    ],
-    "cSpell.numSuggestions": 5,
     "scm.diffDecorationsGutterWidth": 1,
     "scm.diffDecorations": "none",
     "html.format.wrapLineLength": 100,
     "html.format.wrapAttributes": "force-aligned",
-    // --> Color Helper extension
-    "colorHelper.pickerForm": "compact",
     // --> Shellscript
     "[shellscript]": {
         "editor.defaultFormatter": "eetami.whitespace-formatter"
@@ -201,8 +150,6 @@
     "window.restoreWindows": "none",
     "editor.scrollBeyondLastLine": false,
     "workbench.fontAliasing": "antialiased",
-    "liveServer.settings.NoBrowser": true,
-    "liveServer.settings.useLocalIp": true,
     "prettier.useEditorConfig": false,
     "editor.formatOnSave": true,
     "prettier.useTabs": true,
@@ -212,9 +159,12 @@
     "[svg]": {
         "editor.defaultFormatter": "jock.svg"
     },
-    "color-pick.analytics": true,
-    "colorize.colorize_only_visible_beta": true,
-    "[ignore]": {
-        "editor.defaultFormatter": "eetami.whitespace-formatter"
-    }
+    "workbench.colorTheme": "One Dark Pro",
+    "customizeUI.activityBar": "regular",
+    "window.titleBarStyle": "native",
+    "material-icon-theme.folders.color": "#667681",
+    "material-icon-theme.folders.theme": "classic",
+    "currentPath.useAbsolutePath": true,
+    "activitusbar.activeColour": "#8AC5AB",
+    "activitusbar.priority": 1,
 }
