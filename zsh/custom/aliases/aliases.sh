@@ -1,7 +1,7 @@
 # ===> Aliases
 alias 	      update="source ~/.zshrc"
 #  --> ZPlug
-alias 		  zupdate="zplug update;revolver start ' ﲖ Reloading .zshrc';source ~/.zshrc;revolver stop;print -P %F{green}'\n Updated & sourced  '"
+alias 		  zupdate="sleep 1;zplug update;revolver start ' ﲖ Reloading .zshrc';sleep 1;source ~/.zshrc;revolver stop;print -P %F{green}'\n Updated & sourced  '"
 alias 		   zclean="zplug clean --force; zplug clear"
 # --> Git
 alias 		     gitc="git clone"
@@ -29,6 +29,11 @@ alias     		 rcvp="cd ~/Desktop/rcvpro"
 alias             cap="cd ~/Desktop/Capital\ Consultants/capital-consultants"
 alias            ccap="code ~/Desktop/Capital\ Consultants/capital-consultants"
 alias         codecap="code ~/Desktop/Capital\ Consultants/capital-consultants"
+# --> OHM Restoration
+alias ohmdev="code ~/desktop/ohm/website"
+alias ohmroot="cd ~/desktop/ohm/website"
+alias ohmweb="cd ~/desktop/ohm/website/packages/common"
+alias ohmgat="cd ~/desktop/ohm/website/packages/landing-gatsby"
 # --> Font Forge
 alias      rmfontfile="rm -rf ~/.dotfiles/fonts/*"
 # --> OSX
