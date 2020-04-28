@@ -6,6 +6,10 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 # --> Set default User
 DEFAULT_USER=$USER
 
+if [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ]; then
+   source "/Users/awl/ide.zshrc"
+else
+
 # --> Globals & Zsh
 zle_highlight+=(paste:none)
 ENABLE_CORRECTION=true
@@ -57,6 +61,7 @@ source ~/.zplug/init.zsh
 	zplug "molovo/revolver", as:command, use:revolver, from:github
 	zplug "mafredri/zsh-async", from:github, use:"async.zsh"
 zplug load
+
 
 # --> Aliases
 source "${CUSTOMS}/aliases/aliases.sh"
@@ -230,3 +235,4 @@ fi
 # --> Fuzzy finder
 export BAT_CONFIG_PATH="$DOT/zsh/bat.conf"
 export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always {} | head -500" --height 90% --layout=reverse'
+fi
