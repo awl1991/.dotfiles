@@ -30,4 +30,7 @@ zplug load
 # --> Aliases
 source "${CUSTOMS}/aliases/aliases.sh"
 source "${CUSTOMS}/colorls_shortcuts.sh"
+source "${CUSTOMS}/k.sh"
+# --> Iterm2 shell integration
+source "$HOME/.iterm2_shell_integration.zsh"
 
