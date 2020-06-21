@@ -3,6 +3,7 @@
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$PATH:`pwd`/flutter/bin"
 # --> Set default User
 DEFAULT_USER=$USER
 
