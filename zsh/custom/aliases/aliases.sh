@@ -7,7 +7,7 @@ alias       zclean="zplug clean --force; zplug clear"
 alias       gitc="git clone"
 alias       gits="git status"
 alias       gita="git add -A"
-alias       gitp="git push -u origin master"
+alias       gitp="git push -u origin main"
 alias       gitall="git add -A; git commit -m 'commit all'; git push -u origin master"
 gitcmt() {
     git commit -m "${1}"
@@ -45,6 +45,12 @@ alias       reindex-finder="sudo mdutil -i on /"
 # --> Miscellaneous
 alias       tabcolors="code /Applications/iTerm.app/Contents/Resources/graphic_colors.json"
 alias       dirs="k -a -h"
+# --> Gatsby JS
+alias       gd="gatsby develop"
+alias       gc="gatsby clean"
+alias       gcd="gatsby clean;gatsby develop"
+
+
 
 #writetofile() {
 #  echo $(cat > "${1}" << END)
