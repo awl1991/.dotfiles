@@ -2,17 +2,16 @@
 #    ==> Font - Custom Patched Firacode
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="$PATH:/users/awl/utils/flutter/bin"
 
 # --> Set default User
 DEFAULT_USER=$USER
 
-# Switch to Pure Theme is IDE
+# Switch to Pure Theme in IDE intergrated terminal
 if [ "$TERM_PROGRAM" = "vscode" ]; then
-	source "/Users/awl/ide.zshrc"
+	source "/Users/$DEFAULT_USER/ide.zshrc"
 elif [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ]; then
-	source "/Users/awl/ide.zshrc"
+	source "/Users/$DEFAULT_USER/ide.zshrc"
+# Load custom theme if 
 else
 	# --> Globals & Zsh
 	zle_highlight+=(paste:none)
